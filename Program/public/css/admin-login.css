@@ -1,0 +1,129 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background: linear-gradient(45deg, #1e3c72, #2a5298);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.container {
+  width: 100%;
+  max-width: 400px;
+  padding: 20px;
+}
+
+.logo {
+  text-align: center;
+  margin-bottom: 60px;
+  margin-top: 40px;
+}
+
+.logo img {
+  width: 100px; /* Sesuai dengan ukuran yang Anda berikan */
+  height: auto;
+}
+
+.login-form {
+  background: white;
+  padding: 30px;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.input-group {
+  position: relative;
+  margin-bottom: 20px;
+}
+
+.input-group input {
+  width: 100%;
+  padding: 15px 15px 15px 45px;
+  border: none;
+  border-bottom: 1px solid #ddd;
+  border-radius: 0;
+  font-size: 16px;
+  outline: none;
+}
+
+.input-group input:focus {
+  border-bottom-color: #1e3c72;
+}
+
+.input-group .icon {
+  position: absolute;
+  left: 15px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 20px;
+  height: 20px;
+}
+.input-group .toggle-password {
+  position: absolute;
+  right: 15px;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+  background: none;
+  border: none;
+}
+
+.input-group .toggle-password img {
+  width: 20px;
+  height: 20px;
+  opacity: 0.6;
+  transition: opacity 0.3s ease;
+}
+
+.input-group .toggle-password:hover img {
+  opacity: 1;
+}
+
+.hidden {
+  display: none; /* Kelas untuk menyembunyikan elemen */
+}
+
+.login-btn {
+  width: 100%;
+  padding: 15px;
+  background: #000;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  font-size: 16px;
+  cursor: pointer;
+  margin-bottom: 15px;
+}
+
+.login-btn:hover {
+  background: #333;
+}
+
+.forgot-password {
+  display: block;
+  text-align: center;
+  color: #666;
+  text-decoration: none;
+  font-size: 14px;
+}
+
+.forgot-password:hover {
+  text-decoration: underline;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 480px) {
+  .container {
+      padding: 15px;
+  }
+  
+  .login-form {
+      padding: 20px;
+  }
+}

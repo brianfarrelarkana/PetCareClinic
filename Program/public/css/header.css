@@ -1,0 +1,136 @@
+a {
+  border-bottom: none;
+  box-shadow: none;
+  outline: none;
+  text-decoration: none;
+}
+
+body {
+  margin: 0;
+  font-family: 'Oswald', sans-serif;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #9CB414;
+  padding: 10px 20px;
+  height: 60px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  padding: 3px 10px;
+  border-radius: 4px;
+  text-decoration: none;
+  transition: background-color 0.3s;
+  margin-left: 25px;
+  width: 200px;
+}
+
+.logo:hover {
+  background-color: #9CB414;
+}
+
+.logo-image {
+  height: 35px;
+  margin-right: 8px;
+}
+
+.clinic-name {
+  font-size: 16px;
+  max-width: 65px;
+  color: white;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.nav {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  justify-content: center;
+}
+
+.nav-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+}
+
+.nav-list li {
+  margin: 0 15px;
+}
+
+.nav-list a {
+  color: white;
+  text-decoration: none;
+  font-size: 16px;
+  padding: 10px;
+  transition: background-color 0.3s;
+}
+
+.nav-list a:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+  border-radius: 5px;
+}
+
+.login {
+  display: flex;
+  align-items: center;
+  margin-right: 25px;
+}
+
+.login-button {
+  background-color: white;
+  color: #9CB414;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background-color 0.3s;
+  font-family: 'Oswald', sans-serif;
+  font-weight: bold;
+  font-size: 16px;
+}
+
+.login-button:hover {
+  background-color: #ddd;
+}
+
+.account {
+  width: 50px;
+  height: 50px;
+  border-radius: 25px;
+  background-color: #3498db;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 25px;
+}
+
+.initials {
+  color: white;
+  font-size: 20px;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.account-profile {
+  width: 30px;
+  height: 30px;
+}
+
+.account:hover {
+  background-color: #2475ab;
+}

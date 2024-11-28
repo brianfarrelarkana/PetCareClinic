@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment - Pet Care Clinic</title>
+    <link rel="stylesheet" href="css/payment.css">
+    <link rel="stylesheet" href="css/header.css">
+    <link rel="stylesheet" href="css/pre-footer.css">
+    <link rel="stylesheet" href="css/footer.css">
+
+</head>
+<body>
+    <header class="header">
+    <div class="logo">
+      <img src="img/Group 3299.png" alt="Logo Klinik" class="logo-image">
+      <span class="clinic-name">Pet Care Clinic</span>
+    </div>
+    <nav class="nav">
+      <ul class="nav-list">
+        <li><a id="home-link" href="index.html">Home</a></li>
+        <li><a id="clinic-link" href="clinics.html">Clinic</a></li>
+        <li><a id="about-link" href="about-us.html">About Us</a></li>
+        <li><a id="contact-link" href="contact-us.html">Contact Us</a></li>
+      </ul>
+    </nav>
+    <div class="login">
+      <button id="loginButton" class="login-button">Login</button>
+    </div>
+  </header>
+
+    <main class="payment-container">
+        <div class="payment-header">
+            <h1>Payment Details</h1>
+            <p>Complete your payment to confirm your reservation</p>
+        </div>
+
+        <div class="amount-section">
+            <div class="amount-label">Total Amount</div>
+            <div class="amount">Rp 20,000</div>
+        </div>
+
+        <div class="payment-methods">
+            <h2>Payment Options</h2>
+            <div class="bank-list">
+                <div class="bank-option">
+                    <h3>BRI Transfer</h3>
+                    <div class="account-number">1186 0102 2651 501</div>
+                    <div class="account-name">Marchell Nova Aura</div>
+                </div>
+                <div class="bank-option">
+                  <h3>BCA Transfer</h3>
+                  <div class="account-number">0970 949 658</div>
+                  <div class="account-name">Brian Farrel Arkana</div>
+              </div>
+            </div>
+        </div>
+
+        <div class="upload-section">
+            <h2>Upload Payment Proof</h2>
+            <div class="file-upload">
+                <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='48' height='48' viewBox='0 0 24 24' fill='none' stroke='%23666666' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4'%3E%3C/path%3E%3Cpolyline points='17 8 12 3 7 8'%3E%3C/polyline%3E%3Cline x1='12' y1='3' x2='12' y2='15'%3E%3C/line%3E%3C/svg%3E" alt="Upload icon">
+                <p>Click or drag payment proof here</p>
+                <p>Supported formats: JPG, PNG, PDF (Max 5MB)</p>
+                <input type="file" id="photoProof" accept="image/*" required>
+            </div>
+        </div>
+
+        <button class="confirm-button">Confirm Payment</button>
+
+        <p class="note">Please make sure to transfer the exact amount and upload clear proof of payment</p>
+    </main>
+
+    <section class="pre-footer">
+      <div class="pre-footer-container">
+        <div class="footer-column">
+          <h3>Our Services</h3>
+          <ul>
+            <li><a href="veterinary.html">Veterinary Care</a></li>
+            <li><a href="grooming.html">Pet Grooming</a></li>
+            <li><a href="boarding.html">Pet Boarding</a></li>
+            <li><a href="training.html">Pet Training</a></li>
+          </ul>
+        </div>
+  
+        <div class="footer-column">
+          <h3>Contact Us</h3>
+          <ul class="contact-list">
+            <li><i class="fas fa-phone"></i> +1 (555) 123-4567</li>
+            <li><i class="fas fa-envelope"></i> info@petcareclinic.com</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+  
+    <section class="footer">
+      <div class="copyright-bar">
+        <div class="copyright-content">
+          <p>&copy; 2024 Pet Care Clinic. All rights reserved.</p>
+        </div>
+      </div>
+      </div>
+    </section>
+
+    <script type="module" src="/js/payment.js"></script>
+
+</body>
+</html>

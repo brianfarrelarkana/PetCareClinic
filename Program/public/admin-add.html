@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Panel - Add Clinic</title>
+  <link rel="stylesheet" href="/css/admin-header.css">
+  <link rel="stylesheet" href="/css/admin-add.css">
+</head>
+<body>
+  <header class="header">
+    <div class="logo">
+      <img src="img/Group 3299.png" alt="Logo Klinik" class="logo-image">
+      <span class="clinic-name-header">Pet Care Clinic</span>
+    </div>
+  </header>
+  <div class="layout">
+    <nav class="sidebar">
+      <ul class="sidebar-nav">
+        <li>Dashboard</li>
+        <li class="active">Add Clinic</li>
+        <li>Edit Clinic</li>
+        <li>View Clinic</li>
+        <li>Account</li>
+        <li>Logout</li>
+      </ul>
+    </nav>
+
+    <main class="main-content">
+      <div class="add-clinic">
+        <h2>Add New Clinic</h2>
+        <div id="successMessage" class="success-message"></div>
+        <div id="errorMessage" class="error-message"></div>
+        <form id="clinicForm">
+          <div class="form-group">
+            <label for="clinic_name">Clinic Name</label>
+            <input type="text" id="clinic_name" required>
+          </div>
+        
+          <div class="form-group">
+            <label for="location">Location</label>
+            <input type="text" id="location" required>
+          </div>
+        
+          <div class="form-group">
+            <label for="description">Description</label>
+            <textarea id="description" rows="4" required></textarea>
+          </div>
+        
+          <div class="form-group">
+            <label for="photo">Photo</label>
+            <input type="file" id="photo" accept="image/*" required>
+          </div>
+        
+          <button type="submit">Add Clinic</button>
+        </form>                
+      </div>
+    </main>
+  </div>
+
+  <script type="module" src="/js/admin.js"></script>
+</body>
+</html>

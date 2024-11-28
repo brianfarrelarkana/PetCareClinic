@@ -1,0 +1,128 @@
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f4;
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #f6f8f9 0%, #e5ebee 100%);
+  box-sizing: border-box;
+}
+
+/* Adjust for fixed header */
+.container {
+  margin: 120px auto 50px; /* Top margin to account for fixed header */
+  background-color: white;
+  border-radius: 15px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 600px;
+  padding: 40px;
+  text-align: center;
+  transition: transform 0.3s ease;
+}
+
+.profile-header {
+  margin-bottom: 30px;
+}
+
+.profile-icon {
+  width: 150px;
+  height: 150px;
+  background-color: #3498db;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto 20px;
+  box-shadow: 0 6px 12px rgba(52, 152, 219, 0.3);
+}
+
+.initials {
+  color: white;
+  font-size: 60px;
+  font-weight: bold;
+}
+
+.profile-header h1 {
+  margin: 15px 0 10px;
+  color: #333;
+  font-size: 28px;
+}
+
+.profile-header p {
+  color: #666;
+  margin: 0;
+  font-size: 16px;
+}
+
+.profile-details {
+  background-color: #f9f9f9;
+  border-radius: 10px;
+  padding: 25px;
+  margin-bottom: 30px;
+  border: 1px solid #e0e0e0;
+}
+
+.detail-section h2 {
+  margin-top: 0;
+  color: #333;
+  border-bottom: 1px solid #ddd;
+  padding-bottom: 15px;
+  font-size: 22px;
+}
+
+.detail-item {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 15px;
+  padding: 10px;
+  background-color: white;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+
+.detail-item label {
+  color: #666;
+  font-weight: bold;
+  font-size: 16px;
+}
+
+.detail-item span {
+  color: #333;
+  font-size: 16px;
+}
+
+.profile-actions {
+  display: flex;
+  justify-content: center;
+}
+
+.profile-actions {
+  text-align: center;
+}
+
+.profile-actions button {
+  background-color: #e74c3c;
+  color: white;
+  border: none;
+  padding: 12px 25px;
+  border-radius: 7px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.profile-actions button:hover {
+  background-color: #c0392b;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 8px rgba(0,0,0,0.15);
+}
+
+@media (max-width: 768px) {
+  .container {
+      max-width: 90%;
+      padding: 20px;
+      margin: 100px auto 50px;
+  }
+}

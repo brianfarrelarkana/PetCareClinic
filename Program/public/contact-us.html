@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Us | Pet Care Clinic</title>
+  <link rel="stylesheet" href="/css/contact-us.css">
+  <link rel="stylesheet" href="/css/header.css">
+  <link rel="stylesheet" href="/css/pre-footer.css">
+  <link rel="stylesheet" href="/css/footer.css">
+</head>
+
+<body>
+  <div class="header">
+    <a href="home.html" class="logo" id="home-logo">
+      <img src="img/Group 3299.png" alt="Logo Klinik" class="logo-image">
+      <span class="clinic-name">Pet Care Clinic</span>
+    </a>
+    <nav class="nav">
+      <ul class="nav-list">
+        <li><a id="home-link" href="index.html">Home</a></li>
+        <li><a id="clinic-link" href="clinics.html">Clinic</a></li>
+        <li><a id="about-link" href="about-us.html">About Us</a></li>
+        <li><a id="contact-link" href="contact-us.html">Contact Us</a></li>
+      </ul>
+    </nav>
+    <div id="authContainer"></div>
+  </div>
+
+  <main class="contact-main">
+    <section class="contact-header">
+      <h1>Contact Us</h1>
+      <p>What you think is important to us. Tell us your needs and we will reply as soon as possible.</p>
+    </section>
+
+    <section class="contact-form-section">
+      <form class="contact-form">
+      
+        <label for="description">Description *</label>
+        <input type="text" id="description" name="description" placeholder="Specify your request" required>
+
+        <label for="name">Name *</label>
+        <input type="text" id="name" name="name" placeholder="Your full name" required>
+
+        <label for="phone">Phone *</label>
+        <input type="tel" id="phone" name="phone" placeholder="Your phone number" required>
+
+        <label for="email">E-mail *</label>
+        <input type="email" id="email" name="email" placeholder="Your email address" required>
+
+        <div class="checkbox-container">
+          <input type="checkbox" id="agreement" name="agreement" required>
+          <label for="agreement">
+            By submitting this form, I accept that the information entered will be used within the strict framework of my request*
+          </label>
+        </div>
+
+        <button type="submit" class="submit-button">Submit</button>
+      </form>
+    </section>
+  </main>
+
+  <section class="pre-footer">
+    <div class="pre-footer-container">
+      <div class="footer-column">
+        <h3>Our Services</h3>
+        <ul>
+          <li><a href="veterinary.html">Veterinary Care</a></li>
+          <li><a href="grooming.html">Pet Grooming</a></li>
+          <li><a href="boarding.html">Pet Boarding</a></li>
+          <li><a href="training.html">Pet Training</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-column">
+        <h3>Contact Us</h3>
+        <ul class="contact-list">
+          <li><i class="fas fa-phone"></i> +1 (555) 123-4567</li>
+          <li><i class="fas fa-envelope"></i> info@petcareclinic.com</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="footer">
+    <div class="copyright-bar">
+      <div class="copyright-content">
+        <p>&copy; 2024 Pet Care Clinic. All rights reserved.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  <script type="module" src="js/header.js"></script>
+</body>
+
+</html>

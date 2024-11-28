@@ -1,0 +1,77 @@
+<!-- clinics.html -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pet Care Clinic</title>
+  <link rel="stylesheet" href="css/clinics.css">
+  <link rel="stylesheet" href="css/header.css">
+  <link rel="stylesheet" href="/css/pre-footer.css">
+  <link rel="stylesheet" href="/css/footer.css">
+</head>
+
+<body>
+  <div class="header">
+    <a href="home.html" class="logo" id="home-logo">
+      <img src="img/Group 3299.png" alt="Logo Klinik" class="logo-image">
+      <span class="clinic-name">Pet Care Clinic</span>
+    </a>
+    <nav class="nav">
+      <ul class="nav-list">
+        <li><a id="home-link" href="index.html">Home</a></li>
+        <li><a id="clinic-link" href="clinics.html">Clinic</a></li>
+        <li><a id="about-link" href="about-us.html">About Us</a></li>
+        <li><a id="contact-link" href="contact-us.html">Contact Us</a></li>
+      </ul>
+    </nav>
+    <div id="authContainer"></div>
+  </div>
+  
+
+  <main class="main-content" role="main">
+    <div id="loadingState" class="loading-state">
+      <div class="loading-spinner"></div>
+      <p>Loading clinics...</p>
+    </div>
+
+    <div id="clinicContainer" class="clinic-grid"></div>
+  </main>
+  
+  <section class="pre-footer">
+    <div class="pre-footer-container">
+      <div class="footer-column">
+        <h3>Our Services</h3>
+        <ul>
+          <li><a href="veterinary.html">Veterinary Care</a></li>
+          <li><a href="grooming.html">Pet Grooming</a></li>
+          <li><a href="boarding.html">Pet Boarding</a></li>
+          <li><a href="training.html">Pet Training</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-column">
+        <h3>Contact Us</h3>
+        <ul class="contact-list">
+          <li><i class="fas fa-phone"></i> +1 (555) 123-4567</li>
+          <li><i class="fas fa-envelope"></i> info@petcareclinic.com</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="footer">
+    <div class="copyright-bar">
+      <div class="copyright-content">
+        <p>&copy; 2024 Pet Care Clinic. All rights reserved.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <script type="module" src="js/clinics.js"></script>
+  <script type="module" src="js/header.js"></script>
+</body>
+
+</html>
