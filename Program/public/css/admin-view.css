@@ -1,15 +1,18 @@
+/* Reset default margin, padding, dan gunakan border-box untuk semua elemen */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
+/* Tata letak utama dengan flexbox dan tinggi penuh layar */
 .layout {
   display: flex;
   min-height: 100vh;
   margin-top: 60px;
 }
 
+/* Sidebar dengan latar belakang biru dan posisi tetap */
 .sidebar {
   width: 250px;
   background-color: #1359AC;
@@ -19,38 +22,45 @@
   height: calc(100vh - 60px);
 }
 
+/* Judul sidebar */
 .sidebar h1 {
   padding: 0 20px;
   margin-bottom: 30px;
   font-size: 24px;
 }
 
+/* Navigasi sidebar */
 .sidebar-nav {
   list-style: none;
 }
 
+/* Item navigasi sidebar */
 .sidebar-nav li {
   padding: 12px 20px;
   cursor: pointer;
   transition: background-color 0.3s;
 }
 
+/* Efek hover pada item navigasi */
 .sidebar-nav li:hover {
   background-color: #2a7de2;
 }
 
+/* Item navigasi aktif */
 .sidebar-nav li.active {
   background-color: #2a7de2;
 }
 
+/* Konten utama */
 .main-content {
   flex: 1;
   padding: 2rem;
   background-color: #f5f6fa;
-  margin-left: 250px; /* Matches sidebar width */
-  width: calc(100% - 250px); /* Full remaining width */
+  margin-left: 250px; /* Sesuai lebar sidebar */
+  width: calc(100% - 250px); /* Lebar sisa */
 }
 
+/* Bilah pencarian */
 .search-bar {
   display: flex;
   gap: 1rem;
@@ -58,6 +68,7 @@
   width: 100%;
 }
 
+/* Input pencarian */
 .search-input {
   width: 100%;
   padding: 12px;
@@ -67,12 +78,14 @@
   transition: border-color 0.3s ease;
 }
 
+/* Efek fokus pada input pencarian */
 .search-input:focus {
   outline: none;
   border-color: #1359ac;
   box-shadow: 0 0 0 3px rgba(19, 89, 172, 0.1);
 }
 
+/* Daftar klinik dalam grid */
 .clinic-list {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -81,6 +94,7 @@
   width: 100%;
 }
 
+/* Kartu klinik */
 .clinic-card {
   background: white;
   border-radius: 12px;
@@ -92,28 +106,33 @@
   flex-direction: column;
 }
 
+/* Efek hover pada kartu klinik */
 .clinic-card:hover {
   transform: translateY(-5px);
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
 }
 
+/* Kontainer gambar kartu klinik */
 .clinic-card-image {
   width: 100%;
   height: 150px;
   overflow: hidden;
 }
 
+/* Foto klinik */
 .clinic-photo {
   width: 100%;
   height: 100%;
   object-fit: cover;
 }
 
+/* Konten kartu klinik */
 .clinic-card-content {
   padding: 1rem;
   flex-grow: 1;
 }
 
+/* Nama klinik */
 .clinic-name {
   color: #1359ac;
   font-size: 1.25rem;
@@ -121,6 +140,7 @@
   margin-bottom: 0.5rem;
 }
 
+/* Lokasi klinik */
 .clinic-location {
   color: #64748b;
   font-size: 0.95rem;
@@ -130,6 +150,7 @@
   gap: 0.5rem;
 }
 
+/* Deskripsi klinik */
 .clinic-description {
   color: #475569;
   font-size: 0.95rem;
@@ -137,6 +158,7 @@
   margin-bottom: 1rem;
 }
 
+/* Tanggal klinik */
 .clinic-date {
   color: #94a3b8;
   font-size: 0.85rem;
@@ -144,24 +166,26 @@
   padding-top: 0.5rem;
 }
 
-
-/* Responsive grid */
+/* Responsif grid untuk layar menengah */
 @media (max-width: 1200px) {
   .clinic-list {
     grid-template-columns: repeat(2, 1fr);
   }
 }
 
+/* Responsif grid untuk layar kecil */
 @media (max-width: 768px) {
   .clinic-list {
     grid-template-columns: 1fr;
   }
 
+  /* Sesuaikan konten utama untuk layar kecil */
   .main-content {
     margin-left: 0;
     width: 100%;
   }
 
+  /* Sembunyikan sidebar pada layar kecil */
   .sidebar {
     display: none;
   }

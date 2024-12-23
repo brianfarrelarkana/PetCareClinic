@@ -1,9 +1,10 @@
-/*HERO SECTION*/
+/* Reset Margin dan Padding Default */
 * {
   margin: 0;
   padding: 0;
 }
 
+/* BAGIAN HERO */
 .container {
   height: 560px;
   width: 100vw;
@@ -17,6 +18,7 @@
   align-items: center;
 }
 
+/* Konten Hero */
 .hero-content {
   color: black;
   max-width: 550px;
@@ -33,6 +35,7 @@
   margin-bottom: 1.5rem;
 }
 
+/* Tombol Memulai */
 .get-started-btn {
   padding: 0.75rem 1.5rem;
   font-size: 1.5rem;
@@ -54,21 +57,13 @@
   margin-top: 60px;
 }
 
-
-
-
-
-
-
-
-
-
-/*SERVICES SECTION*/
+/* BAGIAN LAYANAN */
 .services-section {
   text-align: center;
   padding: 5rem 0;
 }
 
+/* Judul Layanan */
 .services {
   font-size: 2rem;
   margin-bottom: 0.6rem;
@@ -81,6 +76,7 @@
   color: gray;
 }
 
+/* Kontainer Kotak Layanan */
 .placeholder-boxes {
   display: flex;
   justify-content: center;
@@ -88,9 +84,9 @@
   padding: 1.5rem;
   max-width: 1200px;
   margin: 0 auto;
-  
 }
 
+/* Kotak Layanan */
 .box1, .box2, .box3, .box4 {
   background-color: #f8f8f8;
   width: 350px;
@@ -109,6 +105,7 @@
   cursor: pointer;
 }
 
+/* Efek Hover pada Kotak Layanan */
 .box1::before, .box2::before, .box3::before, .box4::before {
   content: '';
   position: absolute;
@@ -130,6 +127,7 @@
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
 }
 
+/* Judul Kotak Layanan */
 .box1 h2, .box2 h2, .box3 h2, .box4 h2 {
   background-color: rgba(156, 180, 20, 0.8);
   color: white;
@@ -153,6 +151,7 @@
   background-color: rgba(156, 180, 20, 0.9);
 }
 
+/* Latar Belakang Kotak Layanan */
 .box1, .box2, .box3, .box4 {
   background-size: cover;
   background-position: center;
@@ -162,6 +161,7 @@
   transform: translateY(-5px);
 }
 
+/* Kotak Layanan Spesifik */
 .box1 {
   font-size: 1.5rem;
   color: #333;
@@ -199,24 +199,14 @@
   background-position: center;
 }
 
-
-
-
-
-
-
-
-
-
-
-
-/*TRUST SECTION*/
+/* BAGIAN TRUST */
 .trust-section {
   padding: 4rem 2rem;
   text-align: center;
   background-color: #fff;
 }
 
+/* Judul Trust */
 .trust-title {
   font-size: 2.5rem;
   color: #2c3e50;
@@ -224,6 +214,7 @@
   font-weight: bold;
 }
 
+/* Kontainer Trust Card */
 .trust-container {
   display: flex;
   justify-content: center;
@@ -233,6 +224,7 @@
   flex-wrap: wrap;
 }
 
+/* Trust Card */
 .trust-card {
   flex: 1;
   min-width: 300px;
@@ -244,6 +236,7 @@
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
+/* Ikon Lingkaran */
 .icon-circle {
   width: 80px;
   height: 80px;
@@ -258,6 +251,7 @@
   font-size: 2rem;
 }
 
+/* Nomor pada Kartu */
 .number {
   position: absolute;
   top: 20px;
@@ -280,7 +274,7 @@
   line-height: 1.6;
 }
 
-/* Responsive Design */
+/* Desain Responsif */
 @media (max-width: 768px) {
   .trust-container {
     flex-direction: column;
@@ -292,16 +286,3 @@
     max-width: 400px;
   }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-

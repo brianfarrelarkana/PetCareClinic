@@ -1,10 +1,12 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="id">
 
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>About Us</title>
+  <title>Tentang | Pet Care Clinic</title>
+
+  <!-- Link ke file CSS untuk styling halaman -->
   <link rel="stylesheet" href="/css/about-us.css">
   <link rel="stylesheet" href="/css/header.css">
   <link rel="stylesheet" href="/css/pre-footer.css">
@@ -12,76 +14,92 @@
 </head>
 
 <body>
+
+  <!-- Header yang berisi logo dan nama website serta panel menu-->
   <div class="header">
     <a href="home.html" class="logo" id="home-logo">
       <img src="img/Group 3299.png" alt="Logo Klinik" class="logo-image">
       <span class="clinic-name">Pet Care Clinic</span>
     </a>
 
+    <!-- Panel menu -->
     <nav class="nav">
       <ul class="nav-list">
-        <li><a id="home-link" href="index.html">Home</a></li>
-        <li><a id="clinic-link" href="clinics.html">Clinic</a></li>
-        <li><a id="about-link" href="about-us.html">About Us</a></li>
-        <li><a id="contact-link" href="contact-us.html">Contact Us</a></li>
+        <li><a id="home-link" href="index.html">Beranda</a></li>
+        <li><a id="clinic-link" href="clinics.html">Daftar Klinik</a></li>
+        <li><a id="about-link" href="about-us.html">Tentang</a></li>
+        <li><a id="contact-link" href="contact-us.html">Kontak</a></li>
       </ul>
     </nav>
+
+    <!-- Kontainer untuk autentikasi user -->
     <div id="authContainer"></div>
   </div>
 
-
+  <!-- Bagian utama halaman "Tentang Kami" -->
   <section class="about-content">
+    
+    <!-- Subbagian "Cerita Kami" -->
     <div class="about-section">
       <div class="about-text">
-        <h2>Our Story</h2>
-        <p>Established in 2024, Pet Care Clinic hadir sebagai platform reservasi perawatan hewan pertama di Purwokerto.
-          Kami memahami kesibukan pemilik hewan peliharaan dan kebutuhan akan kemudahan akses layanan perawatan hewan
-          yang berkualitas.</p>
-        <p>Berlokasi strategis di pusat Kota Purwokerto, kami berkomitmen untuk menghubungkan pemilik hewan peliharaan
-          dengan layanan perawatan terbaik melalui sistem reservasi online yang mudah dan efisien.</p>
+        <h2>Cerita Kami</h2>
+        <p>Dibuat pada tahun 2024, website Pet Care Clinic hadir sebagai platform reservasi klinik
+          untuk perawatan hewan peliharaan di sekitar Purwokerto. Kami memahami kesibukan pemilik hewan peliharaan
+          dan kebutuhan akan kemudahan akses layanan perawatan hewan yang berkualitas.
+        </p>
+        <p>Kami berkomitmen untuk menghubungkan pemilik hewan peliharaan dengan layanan perawatan terbaik
+          melalui sistem reservasi online yang mudah dan efisien.
+        </p>
       </div>
       <div class="about-image">
         <img src="/img/1101027.jpg" alt="Pet Care Clinic Purwokerto" class="rounded-image">
       </div>
     </div>
 
-
+    <!-- Subbagian "Visi Misi" -->
     <div class="mission-vision">
-      <div class="mission-box">
-        <h3>Misi Kami</h3>
-        <p>Menyediakan platform reservasi yang mudah diakses dan terpercaya untuk layanan perawatan hewan peliharaan di
-          Purwokerto, sambil memastikan setiap hewan mendapatkan perawatan terbaik dengan standar tertinggi.</p>
-      </div>
       <div class="vision-box">
         <h3>Visi Kami</h3>
         <p>Menjadi platform reservasi perawatan hewan terdepan di Purwokerto yang menghadirkan kemudahan dan kenyamanan
-          bagi pemilik hewan peliharaan dalam mengakses layanan kesehatan dan perawatan hewan.</p>
+          bagi pemilik hewan peliharaan dalam mengakses layanan kesehatan dan perawatan hewan.
+        </p>
+      </div>
+      <div class="mission-box">
+        <h3>Misi Kami</h3>
+        <p>Menyediakan platform reservasi yang mudah diakses dan terpercaya untuk layanan perawatan hewan peliharaan di
+          Purwokerto, sambil memastikan setiap hewan mendapatkan perawatan terbaik dengan standar tertinggi.
+        </p>
       </div>
     </div>
   </section>
 
+  <!-- Bagian Pre-Footer -->
   <section class="pre-footer">
     <div class="pre-footer-container">
+      
+      <!-- Subbagian Footer "Layanan Kami" -->
       <div class="footer-column">
-        <h3>Our Services</h3>
+        <h3>Layanan Kami</h3>
         <ul>
-          <li><a href="veterinary.html">Veterinary Care</a></li>
-          <li><a href="grooming.html">Pet Grooming</a></li>
-          <li><a href="boarding.html">Pet Boarding</a></li>
-          <li><a href="training.html">Pet Training</a></li>
+          <li>Veterinary Care</li>
+          <li>Pet Grooming</li>
+          <li>Pet Boarding</li>
+          <li>Pet Training</li>
         </ul>
       </div>
 
+      <!-- Subbagian Footer "Hubungi Kami" -->
       <div class="footer-column">
-        <h3>Contact Us</h3>
+        <h3>Hubungi Kami</h3>
         <ul class="contact-list">
-          <li><i class="fas fa-phone"></i> +1 (555) 123-4567</li>
-          <li><i class="fas fa-envelope"></i> info@petcareclinic.com</li>
+          <li><i class="fas fa-phone"></i> +62 812 3456 0987</li>
+          <li><i class="fas fa-envelope"></i> petcareclinic@gmail.com</li>
         </ul>
       </div>
     </div>
   </section>
 
+  <!-- Bagian Footer -->
   <section class="footer">
     <div class="copyright-bar">
       <div class="copyright-content">
@@ -90,6 +108,8 @@
     </div>
     </div>
   </section>
+
+  <!-- Link ke file JS yang fungsinya dibutuhkan halaman -->
   <script type="module" src="js/header.js"></script>
 </body>
 

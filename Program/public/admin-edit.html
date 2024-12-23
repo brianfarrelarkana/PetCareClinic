@@ -1,67 +1,79 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="id">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Admin Panel - Edit Clinic</title>
+  <title>Admin Edit Clinics - Pet Care Clinic</title>
+
+  <!-- Link ke file CSS untuk styling halaman -->
   <link rel="stylesheet" href="css/admin-edit.css">
   <link rel="stylesheet" href="css/admin-header.css">
 </head>
+
 <body>
+
+  <!-- Header yang berisi logo dan nama website-->
   <header class="header">
     <div class="logo">
       <img src="img/Group 3299.png" alt="Logo Klinik" class="logo-image">
-      <span class="clinic-name-header">Edit Clinic</span>
+      <span class="clinic-name-header">Edit Klinik</span>
     </div>
   </header>
+
+  <!-- Panel menu -->
   <div class="layout">
     <nav class="sidebar">
       <ul class="sidebar-nav">
         <li>Dashboard</li>
-        <li>Add Clinic</li>
-        <li class="active">Edit Clinic</li>
-        <li>View Clinic</li>
-        <li>Account</li>
-        <li>Logout</li>
+        <li>Tambah Klinik</li>
+        <li class="active">Tambah Klinik</li>
+        <li>Akun</li>
       </ul>
     </nav>
 
+    <!-- Bagian utama halaman "Admin Edit" -->
     <main class="main-content">
       <div class="edit-form">
+
+        <!-- Formulir untuk mengedit klinik -->
         <form id="editClinicForm">
           <div class="form-group">
-            <label for="clinic-name">Clinic Name:</label>
+            <label for="clinic-name">Nama Klinik:</label>
             <input type="text" id="clinic-name" name="clinic-name" required>
           </div>
-
+        
           <div class="form-group">
-            <label for="location">Location:</label>
+            <label for="location">Lokasi:</label>
             <input type="text" id="location" name="location" required>
           </div>
-
+        
           <div class="form-group">
-            <label for="description">Description:</label>
+            <label for="description">Deskripsi:</label>
             <textarea id="description" name="description" required></textarea>
           </div>
-
+        
           <div class="photo-upload">
-            <label for="photo">Photo:</label>
+            <label for="photo">Foto:</label>
             <div class="photo-input-wrapper">
               <div class="photo-preview">
                 <img id="preview-image" src="#" alt="Preview">
               </div>
-              <input type="file" id="photo" name="photo" accept="image/*">
+              <input type="file" id="photoURL" name="photo" accept="image/*">
             </div>
           </div>
-
+        
           <div class="button-group">
-            <button type="submit" class="btn-save">Save Changes</button>
-            <button type="button" id="deleteClinic" class="btn-delete">Delete Clinic</button>
+            <button type="submit" class="btn-save">Simpan Perubahan</button>
+            <button type="button" id="deleteClinic" class="btn-delete">Hapus Klinik</button>
           </div>
-        </form>
+        </form>        
       </div>
     </main>
   </div>
-  <script type="module" src="js/admin.js"></script>
+
+  <!-- Link ke file JS yang fungsinya dibutuhkan halaman -->
+  <script type="module" src="js/admin-edit.js"></script>
 </body>
+
 </html>

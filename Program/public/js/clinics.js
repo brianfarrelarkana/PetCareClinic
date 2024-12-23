@@ -1,7 +1,9 @@
+// Import module firebase yang dibutuhkan
 import { initializeApp } from "https://www.gstatic.com/firebasejs/11.0.1/firebase-app.js";
 import { getFirestore, collection, getDocs, query, orderBy } from "https://www.gstatic.com/firebasejs/11.0.1/firebase-firestore.js";
 import { getAuth, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/11.0.1/firebase-auth.js";
 
+// Konfigurasi Firebase
 const firebaseConfig = {
     apiKey: "AIzaSyDe216vNolSH650o58ncd2h2XEbL-3hEZU",
     authDomain: "petcareclinic-4d101.firebaseapp.com",
@@ -13,17 +15,19 @@ const firebaseConfig = {
     measurementId: "G-YYJ26582HP"
 };
 
+// Inisialisasi Firebase
 const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
 const auth = getAuth(app);
 
-let userLoggedIn = false; // Status login pengguna
+// Autentikasi untuk memastikan hanya user login yang bisa melihat tombol pemesanan
+let userLoggedIn = false;
 
-// Periksa apakah pengguna sudah login
 onAuthStateChanged(auth, (user) => {
-    userLoggedIn = !!user; // true jika login, false jika tidak
+    userLoggedIn = !!user;
 });
 
+// Fungsi untuk membuat kartu data klinik
 function createClinicCard(data) {
     const card = document.createElement('div');
     card.className = 'clinic-card';
@@ -44,20 +48,22 @@ function createClinicCard(data) {
                 </div>
                 <p class="clinic-description">${data.description}</p>
             </div>
-            ${userLoggedIn ? `<button class="booking-button">Book Appointment</button>` : ''}
+            ${userLoggedIn ? `<button class="booking-button" data-clinic="${data.clinic_name}">Pesan Antrian</button>` : ''}
         </div>
     `;
 
     const bookingButton = card.querySelector('.booking-button');
     if (bookingButton) {
         bookingButton.addEventListener('click', () => {
-            window.location.href = 'booking.html';
+            const clinicName = bookingButton.dataset.clinic;
+            window.location.href = `booking.html?clinic=${encodeURIComponent(clinicName)}`;
         });
     }
 
     return card;
 }
 
+// Fungsi untuk mengambil data klinik dari firestore
 async function fetchClinics() {
     const loadingState = document.getElementById('loadingState');
     const clinicContainer = document.getElementById('clinicContainer');
@@ -74,10 +80,9 @@ async function fetchClinics() {
         loadingState.style.display = 'none';
 
         if (querySnapshot.empty) {
-            console.log("No clinics found.");
             clinicContainer.innerHTML = `
                 <div class="no-results">
-                    No clinics available at the moment.
+                    Yah... belum ada klinik yang tersedia ni :(
                 </div>
             `;
         } else {
@@ -92,11 +97,10 @@ async function fetchClinics() {
         footer.classList.add('show');
 
     } catch (error) {
-        console.error("Error fetching clinics:", error);
         loadingState.style.display = 'none';
         clinicContainer.innerHTML = `
             <div class="error-message">
-                Error loading clinics. Please try again later.
+                Gagal memuat klinik. Silakan coba lagi nanti.
             </div>
         `;
 

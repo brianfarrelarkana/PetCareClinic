@@ -1,40 +1,46 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="id">
 
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Admin Panel - View Clinics</title>
+  <title>Admin View Clinics - Pet Care Clinic</title>
+
+  <!-- Link ke file CSS untuk styling halaman -->
   <link rel="stylesheet" href="/css/admin-header.css">
   <link rel="stylesheet" href="/css/admin-view.css">
 </head>
 
 <body>
+
+  <!-- Header yang berisi logo dan nama website-->
   <header class="header">
     <div class="logo">
       <img src="img/Group 3299.png" alt="Logo Klinik" class="logo-image">
       <span class="clinic-name-header">Pet Care Clinic</span>
     </div>
   </header>
+
+  <!-- Panel menu -->
   <div class="layout">
     <nav class="sidebar">
       <ul class="sidebar-nav">
         <li>Dashboard</li>
-        <li>Add Clinic</li>
-        <li>Edit Clinic</li>
-        <li class="active">View Clinic</li>
-        <li>Account</li>
-        <li>Logout</li>
+        <li>Tambah Klinik</li>
+        <li class="active">Lihat Klinik</li>
+        <li>Akun</li>
       </ul>
     </nav>
 
+    <!-- Bagian utama halaman "Admin View" -->
     <main class="main-content">
       <div class="clinic-list" id="clinicContainer">
       </div>
     </main>
   </div>
 
-  <script type="module" src="/js/admin.js"></script>
+  <!-- Link ke file JS yang fungsinya dibutuhkan halaman -->
+  <script type="module" src="/js/admin-view.js"></script>
 </body>
 
 </html>

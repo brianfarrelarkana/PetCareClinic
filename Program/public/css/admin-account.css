@@ -1,32 +1,86 @@
+/* Mengatur margin, padding, dan box-sizing untuk semua elemen */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Inter", Arial, sans-serif;
+}
+
+/* Styling untuk body */
 body {
   font-family: Arial, sans-serif;
   background-color: #f4f4f4;
   margin: 0;
   padding: 0;
-  min-height: 100vh;
+  min-height: 50vh;
   background: linear-gradient(135deg, #f6f8f9 0%, #e5ebee 100%);
-  box-sizing: border-box;
 }
 
-/* Pengaturan margin dan tata letak utama kontainer */
+/* Layout utama menggunakan flexbox */
+.layout {
+  display: flex;
+  margin-top: 60px;
+}
+
+/* Styling untuk sidebar */
+.sidebar {
+  width: 250px;
+  background-color: #1359ac;
+  color: white;
+  padding: 20px 0;
+  position: fixed;
+  height: calc(100vh - 60px);
+}
+
+/* Heading di dalam sidebar */
+.sidebar h1 {
+  padding: 0 20px;
+  margin-bottom: 30px;
+  font-size: 24px;
+}
+
+/* List menu di dalam sidebar */
+.sidebar-nav {
+  list-style: none;
+}
+
+/* Styling untuk item menu di sidebar */
+.sidebar-nav li {
+  padding: 12px 20px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+/* Hover effect untuk item menu di sidebar */
+.sidebar-nav li:hover {
+  background-color: #2a7de2;
+}
+
+/* Item menu aktif di sidebar */
+.sidebar-nav li.active {
+  background-color: #2a7de2;
+}
+
+/* Styling untuk kontainer utama */
 .container {
-  margin: 120px auto 50px;
+  margin: 50px auto;
   background-color: white;
   border-radius: 15px;
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
   width: 100%;
-  max-width: 600px;
-  padding: 40px;
+  max-width: 750px;
+  padding: 30px;
   text-align: center;
   transition: transform 0.3s ease;
+  flex: 1;
 }
 
-/* Header profil untuk menampilkan informasi pengguna */
+/* Styling untuk bagian header profil */
 .profile-header {
-  margin-bottom: 30px;
+  margin-bottom: 0;
 }
 
-/* Ikon profil berbentuk lingkaran dengan inisial */
+/* Lingkaran ikon profil */
 .profile-icon {
   width: 150px;
   height: 150px;
@@ -39,27 +93,28 @@ body {
   box-shadow: 0 6px 12px rgba(52, 152, 219, 0.3);
 }
 
-/* Style teks inisial pada ikon profil */
+/* Inisial di dalam lingkaran profil */
 .initials {
   color: white;
   font-size: 60px;
   font-weight: bold;
 }
 
-/* Judul dan deskripsi pada header profil */
+/* Heading di header profil */
 .profile-header h1 {
   margin: 15px 0 10px;
   color: #333;
   font-size: 28px;
 }
 
+/* Paragraf di header profil */
 .profile-header p {
   color: #666;
   margin: 0;
   font-size: 16px;
 }
 
-/* Kontainer detail profil dengan latar belakang abu-abu muda */
+/* Kontainer detail profil */
 .profile-details {
   background-color: #f9f9f9;
   border-radius: 10px;
@@ -68,7 +123,7 @@ body {
   border: 1px solid #e0e0e0;
 }
 
-/* Style judul untuk setiap bagian detail */
+/* Heading di bagian detail profil */
 .detail-section h2 {
   margin-top: 0;
   color: #333;
@@ -77,7 +132,7 @@ body {
   font-size: 22px;
 }
 
-/* Item detail dengan tata letak fleksibel */
+/* Item dalam detail profil */
 .detail-item {
   display: flex;
   justify-content: space-between;
@@ -85,22 +140,23 @@ body {
   padding: 10px;
   background-color: white;
   border-radius: 5px;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
 }
 
-/* Label dan nilai untuk setiap item detail */
+/* Label pada detail profil */
 .detail-item label {
   color: #666;
   font-weight: bold;
   font-size: 16px;
 }
 
+/* Nilai (value) di detail profil */
 .detail-item span {
   color: #333;
   font-size: 16px;
 }
 
-/* Kontainer untuk tombol aksi profil */
+/* Bagian aksi profil */
 .profile-actions {
   display: flex;
   justify-content: center;
@@ -110,7 +166,7 @@ body {
   text-align: center;
 }
 
-/* Style tombol aksi dengan efek hover */
+/* Styling tombol aksi */
 .profile-actions button {
   background-color: #e74c3c;
   color: white;
@@ -120,20 +176,21 @@ body {
   cursor: pointer;
   font-size: 16px;
   transition: all 0.3s ease;
-  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
+/* Hover effect untuk tombol aksi */
 .profile-actions button:hover {
   background-color: #c0392b;
   transform: translateY(-2px);
-  box-shadow: 0 6px 8px rgba(0,0,0,0.15);
+  box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
 }
 
-/* Penyesuaian responsif untuk layar kecil */
+/* Media query untuk layar kecil */
 @media (max-width: 768px) {
   .container {
-      max-width: 90%;
-      padding: 20px;
-      margin: 100px auto 50px;
+    max-width: 90%;
+    padding: 20px;
+    margin: 100px auto 50px;
   }
 }

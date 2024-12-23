@@ -1,8 +1,9 @@
+// Import module firebase yang dibutuhkan
 import { initializeApp } from "https://www.gstatic.com/firebasejs/11.0.1/firebase-app.js";
 import { getDatabase, ref, get } from "https://www.gstatic.com/firebasejs/11.0.1/firebase-database.js";
 import { getAuth, onAuthStateChanged, signOut } from "https://www.gstatic.com/firebasejs/11.0.1/firebase-auth.js";
 
-// Firebase configuration (same as in register.js)
+// Konfigurasi Firebase
 const firebaseConfig = {
     apiKey: "AIzaSyDe216vNolSH650o58ncd2h2XEbL-3hEZU",
     authDomain: "petcareclinic-4d101.firebaseapp.com",
@@ -14,12 +15,21 @@ const firebaseConfig = {
     measurementId: "G-YYJ26582HP"
 };
 
-// Initialize Firebase
+// Inisialisasi Firebase
 const app = initializeApp(firebaseConfig);
 const database = getDatabase(app);
 const auth = getAuth(app);
 
-// Function to update profile display
+// Autentikasi untuk memastikan hanya user login yang bisa masuk
+onAuthStateChanged(auth, (user) => {
+    if (user) {
+        updateProfileDisplay(user);
+    } else {
+        window.location.href = 'login.html';
+    }
+});
+
+// Fungsi untuk mengupdate display profil
 const updateProfileDisplay = async (user) => {
     try {
         const userRef = ref(database, 'users/' + user.uid);
@@ -45,28 +55,17 @@ const updateProfileDisplay = async (user) => {
         }
     } catch (error) {
         console.error("Error fetching user data:", error);
-        alert("Could not load profile information.");
+        alert("Tidak bisa memuat informasi profil.");
     }
 };
 
-// Authentication state listener
-onAuthStateChanged(auth, (user) => {
-    if (user) {
-        // User is signed in
-        updateProfileDisplay(user);
-    } else {
-        // No user is signed in, redirect to login
-        window.location.href = 'login.html';
-    }
-});
-
-// Logout functionality
+// Fungsi untuk Logout
 document.getElementById('logout-btn').addEventListener('click', async () => {
     try {
         await signOut(auth);
         window.location.href = 'index.html';
     } catch (error) {
         console.error("Logout error:", error);
-        alert("Could not log out. Please try again.");
+        alert("Tidak bisa keluar, silakan coba lagi nanti.");
     }
 });

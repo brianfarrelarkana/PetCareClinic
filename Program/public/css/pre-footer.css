@@ -1,4 +1,4 @@
-/*PRE-FOOTER SECTION*/
+/* Bagian pra-footer */
 .pre-footer {
   background-color: #e3e4e6;
   padding: 4rem 2rem;
@@ -6,6 +6,7 @@
   border-top: 1px solid #e9ecef;
 }
 
+/* Kontainer untuk tata letak pra-footer */
 .pre-footer-container {
   max-width: 1200px;
   margin: 0 auto;
@@ -16,10 +17,12 @@
   padding-right: 4rem;
 }
 
+/* Kolom footer individual */
 .footer-column {
   flex: 0 1 250px;
 }
 
+/* Judul pada setiap kolom footer */
 .footer-column h3 {
   color: #333;
   font-size: 1.25rem;
@@ -28,6 +31,7 @@
   position: relative;
 }
 
+/* Garis bawah pada judul kolom footer */
 .footer-column h3::after {
   content: '';
   position: absolute;
@@ -39,6 +43,7 @@
   border-radius: 2px;
 }
 
+/* Daftar dalam kolom footer */
 .footer-column ul {
   list-style: none;
   padding: 0;
@@ -48,6 +53,7 @@
   margin-bottom: 0.75rem;
 }
 
+/* Tautan dalam daftar footer */
 .footer-column ul li a {
   color: #666;
   text-decoration: none;
@@ -58,6 +64,7 @@
   color: #9CB414;
 }
 
+/* Daftar jam operasional */
 .hours-list li {
   color: #666;
   display: flex;
@@ -71,12 +78,14 @@
   color: #333;
 }
 
+/* Informasi darurat */
 .emergency {
   margin-top: 1rem;
   color: #9CB414;
   font-weight: 600;
 }
 
+/* Daftar kontak */
 .contact-list li {
   color: #666;
   margin-bottom: 1rem;
@@ -90,7 +99,7 @@
   margin-top: 4px;
 }
 
-/* Responsive Design */
+/* Desain responsif untuk layar berukuran sedang */
 @media (max-width: 1024px) {
   .pre-footer-container {
     padding-right: 2rem;
@@ -98,24 +107,29 @@
   }
 }
 
+/* Desain responsif untuk layar kecil */
 @media (max-width: 768px) {
+  /* Mengubah tata letak kontainer pra-footer menjadi vertikal */
   .pre-footer-container {
     flex-direction: column;
     align-items: center;
     padding-right: 0;
   }
   
+  /* Menyesuaikan lebar kolom footer */
   .footer-column {
     width: 100%;
     max-width: 300px;
     text-align: center;
   }
   
+  /* Menempatkan garis bawah judul di tengah untuk layar kecil */
   .footer-column h3::after {
     left: 50%;
     transform: translateX(-50%);
   }
   
+  /* Memusatkan daftar kontak */
   .contact-list li {
     justify-content: center;
   }

@@ -1,0 +1,112 @@
+/* Style dasar untuk seluruh dokumen */
+body {
+  font-family: 'Arial', sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f7f8fa;
+  color: #333;
+}
+
+/* Wadah utama untuk mengatur tata letak konten */
+.main-container {
+  max-width: 600px;
+  margin: 40px auto;
+  margin-top: 145px;
+  margin-bottom: 90px;
+  padding: 0 20px;
+}
+
+/* Style judul utama */
+h1 {
+  text-align: center;
+  color: #2d3748;
+  margin-bottom: 30px;
+  font-size: 2.5em;
+  position: relative;
+  padding-bottom: 15px;
+}
+
+/* Garis bawah pada judul */
+h1::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 120px;
+  height: 4px;
+  background: #9cb414;
+  border-radius: 4px;
+}
+
+/* Kontainer untuk daftar pemesanan */
+.bookings-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* Kartu untuk setiap pemesanan */
+.booking-card {
+  background-color: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  padding: 20px;
+  transition: transform 0.3s ease;
+  cursor: pointer;
+  width: 100%;
+  position: relative;
+}
+
+/* Efek hover pada kartu pemesanan */
+.booking-card:hover {
+  transform: scale(1.02);
+}
+
+/* Style judul dalam kartu pemesanan */
+.booking-card h2 {
+  margin: 0 0 15px;
+  color: #2d3748;
+  font-size: 1.2em;
+  text-align: left;
+}
+
+/* Style paragraf dalam kartu pemesanan */
+.booking-card p {
+  margin: 5px 0;
+  color: #4a5568;
+  text-align: left;
+}
+
+/* Label status pemesanan */
+.booking-status {
+  position: absolute;
+  top: 50%;
+  right: 20px;
+  transform: translateY(-50%);
+  display: inline-block;
+  padding: 5px 10px;
+  border-radius: 20px;
+  font-size: 0.8em;
+  font-weight: bold;
+}
+
+/* Style status pemesanan tertunda */
+.status-pending {
+  background-color: #f6e05e;
+  color: #744210;
+}
+
+/* Style status pemesanan selesai */
+.status-completed {
+  background-color: #9cb414;
+  color: white;
+}
+
+/* Penyesuaian untuk layar berukuran kecil */
+@media (max-width: 768px) {
+  .main-container {
+    width: 100%;
+    padding: 0 10px;
+  }
+}

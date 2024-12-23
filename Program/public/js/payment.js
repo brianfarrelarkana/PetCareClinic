@@ -1,8 +1,10 @@
+// Import module firebase yang dibutuhkan
 import { initializeApp } from "https://www.gstatic.com/firebasejs/11.0.1/firebase-app.js";
-import { getFirestore, collection, addDoc, getDocs, query, orderBy } from "https://www.gstatic.com/firebasejs/11.0.1/firebase-firestore.js";
+import { getFirestore, collection, addDoc } from "https://www.gstatic.com/firebasejs/11.0.1/firebase-firestore.js";
 import { getStorage, ref, uploadBytes, getDownloadURL } from "https://www.gstatic.com/firebasejs/11.0.1/firebase-storage.js";
 import { getAuth, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/11.0.1/firebase-auth.js";
 
+// Konfigurasi Firebase
 const firebaseConfig = {
   apiKey: "AIzaSyDe216vNolSH650o58ncd2h2XEbL-3hEZU",
   authDomain: "petcareclinic-4d101.firebaseapp.com",
@@ -14,63 +16,88 @@ const firebaseConfig = {
   measurementId: "G-YYJ26582HP"
 };
 
+// Inisialisasi Firebase
 const firebaseApp = initializeApp(firebaseConfig);
 const db = getFirestore(firebaseApp);
 const storage = getStorage(firebaseApp);
 const auth = getAuth(firebaseApp);
 
+// Autentikasi untuk memastikan hanya user login yang bisa masuk
 onAuthStateChanged(auth, (user) => {
   if (!user) {
-    // No user is signed in, redirect to index
     window.location.href = 'index.html';
   }
 });
 
-/*ADD PHOTO*/
-async function addProof(photoProof) {
+// Fungsi untuk menyimpan data pemesanan dan bukti pembayaran ke firestore
+async function addProof(photoProof, bookingData) {
   try {
-    // Upload photo to Firebase Storage
     const storageRef = ref(storage, `photo_Proof/${Date.now()}_${photoProof.name}`);
     await uploadBytes(storageRef, photoProof);
     const photoURL = await getDownloadURL(storageRef);
 
-    // Add clinic data to Firestore
-    const docRef = await addDoc(collection(db, "payment"), {
-      photoURL: photoURL
+    const paymentDoc = await addDoc(collection(db, "bookings"), {
+      ...bookingData,
+      paymentProofUrl: photoURL,
+      status: "Pending",
+      timestamp: new Date().toISOString(),
     });
 
-    const successMessage = document.getElementById("successMessage");
-    successMessage.textContent = "Photo added successfully!";
-    successMessage.style.display = "block";
+    alert("Pembayaran Berhasil Terkirim!");
 
-    setTimeout(() => {
-      successMessage.style.display = "none";
-    }, 3000);
+    localStorage.removeItem("bookingData");
+    window.location.href = "../order-list.html";
   } catch (error) {
     console.error("Error adding photo: ", error);
-    const errorMessage = document.getElementById("errorMessage");
-    errorMessage.textContent = "Error adding photo. Please try again.";
-    errorMessage.style.display = "block";
-
-    setTimeout(() => {
-      errorMessage.style.display = "none";
-    }, 3000);
+    console.error("Error adding payment: ", error);
+    alert("Pembayaran Gagal. Silakan Coba Lagi");
   }
 }
 
+// Fungsi untuk konfirmasi atau batal pemesanan
 document.addEventListener('DOMContentLoaded', () => {
-  const photoProof = document.getElementById("photoProof");
-  if (photoProof) {
-    photoProof.addEventListener("submit", (event) => {
-      event.preventDefault();
-
-      const photoProof = document.getElementById("photoProof").files[0];
-
-      if (photoProof) {
-        addClinic(clinic_name, location, description, photoProof);
-      } else {
-        alert("Please upload a photo.");
-      }
-    });
+  const bookingData = JSON.parse(localStorage.getItem("bookingData"));
+  if (!bookingData) {
+    alert("Isi formulir pemesanan dulu yaa");
+    window.location.href = "../booking.html";
+    return;
   }
+
+  document.querySelector("#clinic-name").textContent = bookingData.clinicName || "Not specified";
+  document.querySelector("#owner-name").textContent = bookingData.ownerName || "Not specified";
+  document.querySelector("#pet-name").textContent = bookingData.petName || "Not specified";
+  document.querySelector("#service-type").textContent = bookingData.serviceType || "Not specified";
+  document.querySelector("#booking-date").textContent = bookingData.bookingDate || "Not specified";
+  document.querySelector("#booking-time").textContent = bookingData.bookingTime || "Not specified";
+
+  document.querySelector(".amount").textContent = `Rp ${bookingData.amount || "20.000,-"}`;
+
+  const confirmButton = document.querySelector(".confirm-payment");
+  confirmButton.addEventListener("click", async (e) => {
+    e.preventDefault();
+
+    const photoProofInput = document.getElementById("photoProof");
+    const photoProof = photoProofInput.files[0];
+
+    const userConfirmed = confirm("Anda yakin ingin konfirmasi pemesanan ini? Coba cek dulu bukti pembayaran udah di unggah belum.");
+    if (!userConfirmed) return;
+
+    if (!photoProof) {
+      alert("Unggah bukti pembayaran dulu ya sebelum konfirmasi pemesanan.");
+      return;
+    }
+
+    await addProof(photoProof, bookingData);
+  });
+
+  const cancelButton = document.querySelector(".cancel-payment");
+  cancelButton.addEventListener("click", (e) => {
+    e.preventDefault();
+
+    const userConfirmed = confirm("Anda yakin ingin membatalkan pemesanan ini? Detail pemesanan Anda akan hilang loh apabila di batalkan.");
+    if (userConfirmed) {
+      localStorage.removeItem("bookingData");
+      window.location.href = "index.html";
+    }
+  });
 });

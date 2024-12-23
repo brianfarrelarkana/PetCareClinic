@@ -1,21 +1,25 @@
+/* Reset margin dan padding default */
 * {
   margin: 0;
   padding: 0;
 }
 
+/* Gaya dasar body */
 body {
   font-family: Arial, sans-serif;
 }
 
+/* Konten utama dengan lebar maksimal dan margin */
 .main-content {
   max-width: 1200px;
   margin: 2rem auto;
   padding: 0 1rem;
   margin-top: 100px;
-  min-height: calc(100vh - 80px); /* Sesuaikan dengan tinggi header Anda */
+  min-height: calc(100vh - 80px); /* Sesuaikan dengan tinggi header */
   position: relative;
 }
 
+/* Keadaan loading */
 .loading-state {
   position: fixed;
   top: 50%;
@@ -26,6 +30,7 @@ body {
   z-index: 100;
 }
 
+/* Animasi spinner loading */
 .loading-spinner {
   width: 48px;
   height: 48px;
@@ -36,11 +41,13 @@ body {
   animation: spin 1s linear infinite;
 }
 
+/* Animasi putar */
 @keyframes spin {
   0% { transform: rotate(0deg); }
   100% { transform: rotate(360deg); }
 }
 
+/* Grid untuk daftar klinik */
 .clinic-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -49,6 +56,7 @@ body {
   width: 100%;
 }
 
+/* Kartu klinik */
 .clinic-card {
   background: white;
   border-radius: 12px;
@@ -60,6 +68,7 @@ body {
   flex-direction: column;
 }
 
+/* Informasi klinik */
 .clinic-info {
   display: flex;
   flex-direction: column;
@@ -67,28 +76,33 @@ body {
   margin-top: 0.5rem;
 }
 
+/* Efek hover pada kartu klinik */
 .clinic-card:hover {
   transform: translateY(-5px);
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
 }
 
+/* Kontainer gambar klinik */
 .clinic-card-image {
   width: 100%;
   height: 150px;
   overflow: hidden;
 }
 
+/* Foto klinik */
 .clinic-photo {
   width: 100%;
   height: 100%;
   object-fit: cover;
 }
 
+/* Konten kartu klinik */
 .clinic-card-content {
   padding: 1rem;
   flex-grow: 1;
 }
 
+/* Nama klinik */
 .name-clinic {
   color: #9CB414;
   font-size: 1.25rem;
@@ -96,6 +110,7 @@ body {
   margin-bottom: 0.5rem;
 }
 
+/* Lokasi klinik */
 .clinic-location {
   display: flex;
   align-items: center;
@@ -104,11 +119,13 @@ body {
   font-size: 0.95rem;
 }
 
+/* Ikon lokasi */
 .clinic-location svg {
   flex-shrink: 0;
   color: #9CB414;
 }
 
+/* Deskripsi klinik */
 .clinic-description {
   color: #475569;
   font-size: 0.95rem;
@@ -119,6 +136,8 @@ body {
   overflow: hidden;
   text-overflow: ellipsis;
 }
+
+/* Tombol booking */
 .booking-button {
   background-color: #9CB414;
   color: white;
@@ -133,20 +152,24 @@ body {
   margin-top: 16px;
 }
 
+/* Efek hover tombol booking */
 .booking-button:hover {
   background-color: #8ca012;
 }
 
+/* Efek tekan tombol booking */
 .booking-button:active {
   transform: scale(0.98);
 }
 
+/* Pesan kesalahan */
 .error-message {
   text-align: center;
   color: #dc2626;
   padding: 2rem;
 }
 
+/* Pesan tidak ada hasil */
 .no-results {
   text-align: center;
   color: #64748b;
@@ -154,6 +177,7 @@ body {
   grid-column: 1 / -1;
 }
 
+/* Gaya responsif untuk layar kecil */
 @media (max-width: 768px) {
   .header-content {
       flex-direction: column;
@@ -169,13 +193,14 @@ body {
   }
 }
 
-
+/* Footer */
 .pre-footer,
 .footer {
   display: none; /* Sembunyikan footer secara default */
 }
 
+/* Tampilkan footer saat memiliki class 'show' */
 .pre-footer.show,
 .footer.show {
-  display: block; /* Tampilkan footer ketika memiliki class 'show' */
+  display: block;
 }

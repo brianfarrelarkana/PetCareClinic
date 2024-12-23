@@ -1,4 +1,4 @@
-/* Reset and Base Styles */
+/* Reset dan Gaya Dasar */
 * {
   margin: 0;
   padding: 0;
@@ -17,14 +17,14 @@ body {
   align-items: center;
 }
 
-/* Container Styles */
+/* Wadah untuk menampung konten utama */
 .container {
   width: 100%;
   max-width: 400px;
   padding: 20px;
 }
 
-/* Logo Styles */
+/* Tempat logo website */
 .logo {
   text-align: center;
   margin: 40px 0 60px;
@@ -35,7 +35,7 @@ body {
   height: auto;
 }
 
-/* Login Form Styles */
+/* Formulir untuk proses masuk */
 .login-form {
   background: white;
   padding: 30px;
@@ -48,12 +48,13 @@ body {
   text-align: center;
 }
 
-/* Input Group Styles */
+/* Pengelompokkan elemen masukan */
 .input-group {
   position: relative;
   margin-bottom: 20px;
 }
 
+/* Pembungkus ikon dalam input */
 .icon-wrapper {
   position: absolute;
   left: 15px;
@@ -67,6 +68,7 @@ body {
   pointer-events: none;
 }
 
+/* Style ikon dalam input */
 .icon {
   width: 20px;
   height: 20px;
@@ -95,6 +97,7 @@ body {
   border-bottom-color: #1e3c72;
 }
 
+/* Tombol untuk menampilkan/menyembunyikan kata sandi */
 .input-group .toggle-password {
   position: absolute;
   right: 15px;
@@ -110,11 +113,12 @@ body {
   height: 20px;
 }
 
+/* Kelas untuk menyembunyikan elemen */
 .hidden {
   display: none;
 }
 
-/* Button Styles */
+/* Tombol untuk proses masuk */
 .login-btn {
   width: 100%;
   padding: 15px;
@@ -133,7 +137,7 @@ body {
   background: #333;
 }
 
-/* Register Link Styles */
+/* Tautan untuk mendaftar akun baru */
 .register-link {
   text-align: center;
   font-size: 14px;
@@ -148,7 +152,7 @@ body {
   text-decoration: underline;
 }
 
-/* Responsive Design */
+/* Desain responsif untuk layar kecil */
 @media screen and (max-width: 480px) {
   .container {
       padding: 15px;

@@ -1,10 +1,11 @@
-/* Reset and Base Styles */
+/* Pengaturan Reset dan Gaya Dasar */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
+/* Style Utama Halaman - Body */
 body {
   font-family: Arial, sans-serif;
   background-image: url(../img/bg-2.png);
@@ -17,14 +18,14 @@ body {
   align-items: center;
 }
 
-/* Container Styles */
+/* Kontainer Utama Halaman */
 .container {
   width: 100%;
   max-width: 400px;
   padding: 20px;
 }
 
-/* Logo Styles */
+/* Style dan Tata Letak Logo */
 .logo {
   text-align: center;
   margin: 40px 0 60px;
@@ -35,7 +36,7 @@ body {
   height: auto;
 }
 
-/* Register Form Styles */
+/* Style Formulir Registrasi */
 .register-form {
   background: white;
   padding: 30px;
@@ -48,12 +49,13 @@ body {
   text-align: center;
 }
 
-/* Input Group Styles */
+/* Style Input Group */
 .input-group {
   position: relative;
   margin-bottom: 20px;
 }
 
+/* Pembungkus Ikon Input */
 .icon-wrapper {
   position: absolute;
   left: 15px;
@@ -67,6 +69,7 @@ body {
   pointer-events: none;
 }
 
+/* Style Ikon */
 .icon {
   width: 20px;
   height: 20px;
@@ -74,6 +77,7 @@ body {
   transition: opacity 0.2s ease;
 }
 
+/* Style Elemen Input */
 .input-group input {
   width: 100%;
   padding: 15px 15px 15px 45px;
@@ -89,6 +93,7 @@ body {
   padding-right: 45px;
 }
 
+/* Efek Fokus untuk Input */
 .input-group input:focus {
   border-bottom-color: #1e3c72;
 }
@@ -97,7 +102,7 @@ body {
   opacity: 1;
 }
 
-/* Password Toggle Button */
+/* Tombol Toggle Kata Sandi */
 .toggle-password {
   position: absolute;
   right: 15px;
@@ -127,11 +132,12 @@ body {
   opacity: 1;
 }
 
+/* Kelas untuk Menyembunyikan Elemen */
 .hidden {
   display: none;
 }
 
-/* Button Styles */
+/* Style untuk Button Registrasi */
 .register-btn {
   width: 100%;
   padding: 15px;
@@ -150,7 +156,7 @@ body {
   background: #333;
 }
 
-/* Login Link Styles */
+/* Style untuk Direct to Login */
 .login-link {
   text-align: center;
   font-size: 14px;
@@ -165,7 +171,7 @@ body {
   text-decoration: underline;
 }
 
-/* Responsive Design */
+/* Desain Responsif untuk Layar Kecil */
 @media screen and (max-width: 480px) {
   .container {
       padding: 15px;

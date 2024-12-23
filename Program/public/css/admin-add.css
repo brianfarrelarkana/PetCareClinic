@@ -1,15 +1,18 @@
+/* Mengatur margin, padding, dan box-sizing untuk semua elemen */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
+/* Tata letak pada layout */
 .layout {
   display: flex;
   min-height: 100vh;
   margin-top: 60px;
 }
 
+/* Style untuk sidebar */
 .sidebar {
   width: 250px;
   background-color: #1359AC;
@@ -19,32 +22,36 @@
   height: calc(100vh - 60px);
 }
 
+/* Tata letak untuk sidebar pada h1 */
 .sidebar h1 {
   padding: 0 20px;
   margin-bottom: 30px;
   font-size: 24px;
 }
 
+/* Menghapus bullet point dari daftar navigasi sidebar */
 .sidebar-nav {
   list-style: none;
 }
 
+/* Style untuk item pada sidebar-nav */
 .sidebar-nav li {
   padding: 12px 20px;
   cursor: pointer;
   transition: background-color 0.3s;
 }
 
+/* Hover untuk item pada sidebar-nav */
 .sidebar-nav li:hover {
   background-color: #2a7de2;
 }
 
+/* Item navigasi aktif dengan warna latar belakang berbeda */
 .sidebar-nav li.active {
   background-color: #2a7de2;
 }
 
-
-/*MAIN CONTENT*/
+/* Style untuk main-content */
 .main-content {
   flex: 1;
   padding: 20px;
@@ -52,6 +59,7 @@
   margin-left: 250px;
 }
 
+/* Style untuk add-clinic */
 .add-clinic {
   background-color: white;
   padding: 30px;
@@ -61,16 +69,19 @@
   margin: 20px auto;
 }
 
+/* Style untuk add-clinic pada h2 */
 .add-clinic h2 {
   color: #1359AC;
   margin-bottom: 25px;
   font-size: 24px;
 }
 
+/* Margin-bottom untuk form-group */
 .form-group {
   margin-bottom: 20px;
 }
 
+/* Style pada label */
 label {
   display: block;
   font-weight: 600;
@@ -78,6 +89,7 @@ label {
   margin-bottom: 8px;
 }
 
+/* Style pada input dan textarea */
 input, textarea {
   width: 100%;
   padding: 12px;
@@ -87,17 +99,20 @@ input, textarea {
   transition: border-color 0.3s ease;
 }
 
+/* Mambahkan efek focus pada input dan textarea */
 input:focus, textarea:focus {
   outline: none;
   border-color: #1359AC;
   box-shadow: 0 0 0 3px rgba(19, 89, 172, 0.1);
 }
 
+/* mengubah ukuran menjadi vertikal pada textarea */
 textarea {
   min-height: 120px;
   resize: vertical;
 }
 
+/* Style pada button */
 button {
   width: 100%;
   padding: 14px;
@@ -111,10 +126,12 @@ button {
   transition: background-color 0.3s ease;
 }
 
+/* Hover pada button */
 button:hover {
   background-color: #2a7de2;
 }
 
+/* Style untuk success-message */
 .success-message {
   background-color: #4CAF50;
   color: white;
@@ -125,6 +142,7 @@ button:hover {
   font-weight: 500;
 }
 
+/*  Style untuk error-message */
 .error-message {
   background-color: #f44336;
   color: white;

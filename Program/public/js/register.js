@@ -1,8 +1,9 @@
+// Import module firebase yang dibutuhkan
 import { initializeApp } from "https://www.gstatic.com/firebasejs/11.0.1/firebase-app.js";
 import { getDatabase, ref, set } from "https://www.gstatic.com/firebasejs/11.0.1/firebase-database.js";
 import { getAuth, createUserWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/11.0.1/firebase-auth.js";
 
-// Firebase configuration
+// Konfigurasi Firebase
 const firebaseConfig = {
     apiKey: "AIzaSyDe216vNolSH650o58ncd2h2XEbL-3hEZU",
     authDomain: "petcareclinic-4d101.firebaseapp.com",
@@ -14,36 +15,23 @@ const firebaseConfig = {
     measurementId: "G-YYJ26582HP"
 };
 
-// Initialize Firebase
+// Inisialisasi Firebase
 const app = initializeApp(firebaseConfig);
 const database = getDatabase(app);
 const auth = getAuth(app);
 
-// Test database connection
-//const testConnection = async () => {
-//console.log("Testing Firebase Database connection...");
-//try {
-//const testRef = ref(database, 'testConnection');
-//await set(testRef, { test: "Connection Successful" });
-//console.log("Database connection successful!");
-//} catch (error) {
-//console.error("Database connection failed:", error);
-//}
-//};
-//testConnection();
-
-// Form validation functions
+// Fungsi untuk validasi password
 const validatePassword = (password) => {
-    // Add your password validation rules here
-    return password.length >= 6; // Basic example: minimum 6 characters
+    return password.length >= 6;
 };
 
+// Fungsi untuk memvalidasi email
 const validateEmail = (email) => {
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     return emailRegex.test(email);
 };
 
-// Form submission handling
+// Fungsi untuk formulir registrasi
 const registerForm = document.getElementById('register-form');
 registerForm.addEventListener('submit', async (event) => {
     event.preventDefault();
@@ -54,23 +42,47 @@ registerForm.addEventListener('submit', async (event) => {
     const confirmPassword = document.getElementById('confirm-password').value;
 
     if (!username || !email || !password || !confirmPassword) {
-        alert('Please fill in all fields.');
+        alert('Tolong isi semua kolom jawaban yang ada yaa');
         return;
     }
 
     if (!validateEmail(email)) {
-        alert('Please enter a valid email address.');
+        alert('Masukkin email nya yang valid dong');
         return;
     }
 
     if (!validatePassword(password)) {
-        alert('Password must be at least 6 characters long.');
+        alert('Password nya minimal 6 karakter yaa');
         return;
     }
 
     if (password !== confirmPassword) {
-        alert('Passwords do not match.');
+        alert('Passwords nya beda sama yang atas, coba samain');
         return;
+    }
+
+    function handleRegisterError(error) {
+        let errorMessage = 'Yahh... registrasi gagal';
+
+        switch (error.code) {
+            case 'auth/email-already-in-use':
+                errorMessage += 'Email udah dipakai nih';
+                break;
+            case 'auth/invalid-email':
+                errorMessage += 'Email invalid';
+                break;
+            case 'auth/operation-not-allowed':
+                errorMessage += 'Email/password akun ga boleh';
+                break;
+            case 'auth/weak-password':
+                errorMessage += 'Password terlalu lemah, jangan pake nama123';
+                break;
+            default:
+                errorMessage += error.message;
+        }
+
+        alert(errorMessage);
+        console.error("Registrasi error:", error);
     }
 
     try {
@@ -82,45 +94,25 @@ registerForm.addEventListener('submit', async (event) => {
             email,
             createdAt: new Date().toISOString(),
             isActive: true,
+            role: "user"
         };
 
         await set(ref(database, 'users/' + user.uid), userData);
 
-        alert('Registration successful!');
+        alert('Yeay.. registrasi berhasil, coba login yuk!');
         window.location.href = 'login.html';
     } catch (error) {
-        let errorMessage = 'Registration failed: ';
-
-        switch (error.code) {
-            case 'auth/email-already-in-use':
-                errorMessage += 'Email is already registered.';
-                break;
-            case 'auth/invalid-email':
-                errorMessage += 'Invalid email address.';
-                break;
-            case 'auth/operation-not-allowed':
-                errorMessage += 'Email/password accounts are not enabled.';
-                break;
-            case 'auth/weak-password':
-                errorMessage += 'Password is too weak.';
-                break;
-            default:
-                errorMessage += error.message;
-        }
-
-        alert(errorMessage);
-        console.error("Registration error:", error);
+        handleRegisterError(error)
     }
 });
 
-// Handle password visibility toggle
+// Menambahkan event listener untuk toggle password
 document.addEventListener('DOMContentLoaded', () => {
     const passwordInput = document.getElementById('password');
     const confirmPasswordInput = document.getElementById('confirm-password');
     const eyeIcons = document.querySelectorAll('.eye-icon');
     const eyeOffIcons = document.querySelectorAll('.eye-off-icon');
 
-    // Setup toggle for each password field
     [passwordInput, confirmPasswordInput].forEach((input, index) => {
         if (input && eyeIcons[index] && eyeOffIcons[index]) {
             const eyeIcon = eyeIcons[index];

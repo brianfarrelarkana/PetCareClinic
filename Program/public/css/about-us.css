@@ -1,19 +1,22 @@
+/* Reset margin dan padding untuk semua elemen */
 * {
   margin: 0;
   padding: 0;
 }
 
-/*ABOUT-CONTENT*/
+/* Styling untuk teks heading utama di bagian hero */
 .about-hero-content h1 {
   font-size: 3rem;
   margin-bottom: 1rem;
 }
 
+/* Subtitle pada bagian hero */
 .about-hero-content .subtitle {
   font-size: 1.5rem;
   opacity: 0.9;
 }
 
+/* Kontainer utama untuk konten "About Us" */
 .about-content {
   max-width: 1200px;
   margin: 0 auto;
@@ -21,6 +24,7 @@
   padding: 4rem 2rem;
 }
 
+/* Seksi utama tentang klinik (teks + gambar) */
 .about-section {
   display: flex;
   gap: 4rem;
@@ -28,45 +32,47 @@
   align-items: center;
 }
 
+/* Kontainer teks untuk bagian "About Us" */
 .about-text {
   flex: 1;
 }
 
+/* Kontainer gambar untuk bagian "About Us" */
 .about-image {
   flex: 1;
 }
 
+/* Heading di bagian teks "About Us" */
 .about-text h2 {
   color: #333;
   font-size: 2rem;
   margin-bottom: 1.5rem;
 }
 
+/* Paragraf di bagian teks "About Us" */
 .about-text p {
   color: #666;
   line-height: 1.8;
   margin-bottom: 1rem;
 }
 
+/* Styling untuk gambar dengan border bulat dan efek bayangan */
 .rounded-image {
   width: 100%;
   border-radius: 12px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
-
-
-
-
-
-/*MISSION-VISION*/
+/* Kontainer utama untuk bagian Misi dan Visi */
 .mission-vision {
   display: flex;
   gap: 2rem;
   margin-bottom: 1.5rem;
 }
 
-.mission-box, .vision-box {
+/* Kontainer masing-masing box (Misi dan Visi) */
+.mission-box,
+.vision-box {
   flex: 1;
   padding: 2rem;
   background-color: #f8f9fa;
@@ -75,7 +81,9 @@
   margin-top: 5rem;
 }
 
-.mission-box h3, .vision-box h3 {
+/* Heading di dalam box (Misi dan Visi) */
+.mission-box h3,
+.vision-box h3 {
   color: #333;
   font-size: 1.5rem;
   margin-bottom: 1rem;

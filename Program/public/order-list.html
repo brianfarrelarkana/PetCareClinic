@@ -4,11 +4,11 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Daftar Klinik | Pet Care Clinic</title>
+  <title>Daftar Pemesanan | Pet Care Clinic</title>
 
   <!-- Link ke file CSS untuk styling halaman -->
-  <link rel="stylesheet" href="css/clinics.css">
-  <link rel="stylesheet" href="css/header.css">
+  <link rel="stylesheet" href="/css/order-list.css">
+  <link rel="stylesheet" href="/css/header.css">
   <link rel="stylesheet" href="/css/pre-footer.css">
   <link rel="stylesheet" href="/css/footer.css">
 </head>
@@ -25,7 +25,7 @@
     <!-- Panel menu -->
     <nav class="nav">
       <ul class="nav-list">
-        <li><a id="home-link" href="index.html">Beranda</a></li>
+        <li><a id="home-link" href="home.html">Beranda</a></li>
         <li><a id="clinic-link" href="clinics.html">Daftar Klinik</a></li>
         <li><a id="about-link" href="about-us.html">Tentang</a></li>
         <li><a id="contact-link" href="contact-us.html">Kontak</a></li>
@@ -36,15 +36,13 @@
     <div id="authContainer"></div>
   </div>
 
-  <!-- Bagian utama halaman "Daftar Klinik" -->
-  <main class="main-content" role="main">
-    <div id="loadingState" class="loading-state">
-      <div class="loading-spinner"></div>
-      <p>Memuat Klinik...</p>
+  <!-- Bagian utama halaman "Daftar Pemesanan" -->
+  <main class="main-container">
+    <h1>Pesanan Saya</h1>
+    <div id="bookings-list" class="bookings-grid">
     </div>
-    <div id="clinicContainer" class="clinic-grid"></div>
   </main>
-  
+
   <!-- Bagian Pre-Footer -->
   <section class="pre-footer">
     <div class="pre-footer-container">
@@ -82,8 +80,8 @@
   </section>
 
   <!-- Link ke file JS yang fungsinya dibutuhkan halaman -->
-  <script type="module" src="js/clinics.js"></script>
   <script type="module" src="js/header.js"></script>
+  <script type="module" src="js/order-list.js"></script>
 </body>
 
 </html>

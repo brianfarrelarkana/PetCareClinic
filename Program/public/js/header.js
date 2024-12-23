@@ -1,7 +1,9 @@
+// Import module firebase yang dibutuhkan
 import { initializeApp } from "https://www.gstatic.com/firebasejs/11.0.1/firebase-app.js";
 import { getDatabase, ref, get } from "https://www.gstatic.com/firebasejs/11.0.1/firebase-database.js";
 import { getAuth, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/11.0.1/firebase-auth.js";
 
+// Konfigurasi Firebase
 const firebaseConfig = {
     apiKey: "AIzaSyDe216vNolSH650o58ncd2h2XEbL-3hEZU",
     authDomain: "petcareclinic-4d101.firebaseapp.com",
@@ -13,43 +15,44 @@ const firebaseConfig = {
     measurementId: "G-YYJ26582HP"
 };
 
+// Inisialisasi Firebase
 const app = initializeApp(firebaseConfig);
 const database = getDatabase(app);
 const auth = getAuth(app);
 
-
-// Periksa apakah pengguna sudah login
+// Autentikasi untuk menampilkan profil pada user login dan tombol login/register untuk user non login
 onAuthStateChanged(auth, (user) => {
-    const authContainer = document.getElementById('authContainer'); // Pastikan ini adalah elemen di mana Anda ingin menampilkan login atau profil
+    const authContainer = document.getElementById('authContainer');
 
-    // Kosongkan kontainer untuk mencegah duplikasi
     authContainer.innerHTML = '';
 
     if (user) {
-        // Ambil data pengguna dari Realtime Database
         const userRef = ref(database, 'users/' + user.uid);
 
-        // Ambil data pengguna
         get(userRef).then((snapshot) => {
             if (snapshot.exists()) {
                 const userData = snapshot.val();
 
-                // Mengambil username dari data yang ada di Realtime Database
-                const username = userData.username || 'User'; // Jika tidak ada username, gunakan 'User' sebagai fallback
+                const username = userData.username || 'User';
 
-                // Mengambil inisial dari username
                 const initials = username.substring(0, 2).toUpperCase();
 
-                // Membuat elemen profil dengan inisial
                 const loginprofile = document.createElement('div');
                 loginprofile.innerHTML = `
-                    <div class="account">
-                        <a href="profile.html">
-                            <div class="initials">${initials}</div>
-                        </a>
+                    <div class="user-actions">
+                        <div class="action-icons">
+                            <a href="order-list.html" class="list-icon">
+                                <img src="img/list.png" alt="Bookings" width="28" height="28">
+                            </a>
+                        </div>
+                        <div class="account">
+                            <a href="profile.html">
+                                <div class="initials">${initials}</div>
+                            </a>
+                        </div>
                     </div>
                 `;
-                authContainer.appendChild(loginprofile); // Menambahkan elemen ke kontainer
+                authContainer.appendChild(loginprofile);
             } else {
                 console.log("Data pengguna tidak ditemukan");
             }
@@ -57,16 +60,15 @@ onAuthStateChanged(auth, (user) => {
             console.error("Error mengambil data pengguna:", error);
         });
     } else {
-        // Jika user belum login, buat elemen tombol login
         const loginprofile = document.createElement('div');
         loginprofile.className = 'login';
         loginprofile.innerHTML = `
             <div class="login">
                 <a href="login.html">
-                    <button id="loginButton" class="login-button">Login</button>
+                    <button id="loginButton" class="login-button">Daftar/Masuk</button>
                 </a>
             </div>
         `;
-        authContainer.appendChild(loginprofile); // Menambahkan elemen ke kontainer
+        authContainer.appendChild(loginprofile);
     }
 });

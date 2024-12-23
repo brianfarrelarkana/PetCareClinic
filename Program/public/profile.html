@@ -1,10 +1,12 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="id">
 
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>User Profile - Pet Care Clinic</title>
+  <title>Profil | Pet Care Clinic</title>
+
+  <!-- Link ke file CSS untuk styling halaman -->
   <link rel="stylesheet" href="css/header.css">
   <link rel="stylesheet" href="css/profile.css">
   <link rel="stylesheet" href="css/pre-footer.css">
@@ -13,22 +15,25 @@
 
 <body>
 
+  <!-- Header yang berisi logo dan nama website serta panel menu-->
   <div class="header">
     <a href="index.html" class="logo" id="home-logo">
       <img src="img/Group 3299.png" alt="Logo Klinik" class="logo-image">
       <span class="clinic-name">Pet Care Clinic</span>
     </a>
 
+    <!-- Panel menu -->
     <nav class="nav">
       <ul class="nav-list">
-        <li><a href="index.html" id="home-link">Home</a></li>
-        <li><a href="clinics.html" id="clinic-link">Clinic</a></li>
-        <li><a href="about-us.html" id="about-link">About Us</a></li>
-        <li><a href="contact-us.html" id="contact-link">Contact Us</a></li>
+        <li><a href="index.html" id="home-link">Beranda</a></li>
+        <li><a id="clinic-link" href="clinics.html">Daftar Klinik</a></li>
+        <li><a id="about-link" href="about-us.html">Tentang</a></li>
+        <li><a id="contact-link" href="contact-us.html">Kontak</a></li>
       </ul>
     </nav>
   </div>
 
+  <!-- Detail profil user-->
   <div class="container">
     <div class="profile-header">
       <div class="profile-icon">
@@ -40,49 +45,55 @@
 
     <div class="profile-details">
       <div class="detail-section">
-        <h2>Account Information</h2>
+        <h2>Informasi Akun</h2>
         <div class="detail-item">
           <label>Username</label>
           <span id="username-info">-</span>
         </div>
         <div class="detail-item">
-          <label>Email Address</label>
+          <label>Email</label>
           <span id="email-info">-</span>
         </div>
         <div class="detail-item">
-          <label>Account Created</label>
+          <label>Tanggal Pembuatan Akun</label>
           <span id="created-at">-</span>
         </div>
       </div>
     </div>
 
+    <!-- Log out-->
     <div class="profile-actions">
-      <button id="logout-btn" class="logout-btn">Logout</button>
+      <button id="logout-btn" class="logout-btn">Keluar</button>
     </div>
   </div>
 
+  <!-- Bagian Pre-Footer -->
   <section class="pre-footer">
     <div class="pre-footer-container">
+
+      <!-- Subbagian Footer "Layanan Kami" -->
       <div class="footer-column">
-        <h3>Our Services</h3>
+        <h3>Layanan Kami</h3>
         <ul>
-          <li><a href="veterinary.html">Veterinary Care</a></li>
-          <li><a href="grooming.html">Pet Grooming</a></li>
-          <li><a href="boarding.html">Pet Boarding</a></li>
-          <li><a href="training.html">Pet Training</a></li>
+          <li>Veterinary Care</li>
+          <li>Pet Grooming</li>
+          <li>Pet Boarding</li>
+          <li>Pet Training</li>
         </ul>
       </div>
 
+      <!-- Subbagian Footer "Hubungi Kami" -->
       <div class="footer-column">
-        <h3>Contact Us</h3>
+        <h3>Hubungi Kami</h3>
         <ul class="contact-list">
-          <li><i class="fas fa-phone"></i> +1 (555) 123-4567</li>
-          <li><i class="fas fa-envelope"></i> info@petcareclinic.com</li>
+          <li><i class="fas fa-phone"></i> +62 812 3456 0987</li>
+          <li><i class="fas fa-envelope"></i> petcareclinic@gmail.com</li>
         </ul>
       </div>
     </div>
   </section>
 
+  <!-- Bagian Footer -->
   <section class="footer">
     <div class="copyright-bar">
       <div class="copyright-content">
@@ -92,6 +103,7 @@
     </div>
   </section>
 
+  <!-- Link ke file JS yang fungsinya dibutuhkan halaman -->
   <script type="module" src="js/profile.js"></script>
 </body>
 

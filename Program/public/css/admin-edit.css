@@ -1,4 +1,4 @@
-/* General Reset */
+/* Reset Umum */
 * {
   margin: 0;
   padding: 0;
@@ -6,7 +6,7 @@
   font-family: 'Inter', Arial, sans-serif;
 }
 
-/* Layout Settings */
+/* Style untuk layout */
 .layout {
   display: flex;
   min-height: 100vh;
@@ -14,7 +14,7 @@
   background-color: #f5f6fa;
 }
 
-/* Sidebar Styling */
+/* Style untuk sidebar */
 .sidebar {
   width: 250px;
   background-color: #1359AC;
@@ -25,27 +25,31 @@
   transition: transform 0.3s ease;
 }
 
+/* Menghilangkan bullet point dari navigasi sidebar */
 .sidebar-nav {
   list-style: none;
 }
 
+/* Style untuk item pada sidebar-nav */
 .sidebar-nav li {
   padding: 12px 20px;
   cursor: pointer;
   transition: background-color 0.3s ease, padding-left 0.3s ease;
 }
 
+/* Hover untuk item pada sidebar-nav */
 .sidebar-nav li:hover {
   background-color: #2a7de2;
   padding-left: 25px;
 }
 
+/* Item navigasi yang sedang aktif */
 .sidebar-nav li.active {
   background-color: #2a7de2;
   font-weight: bold;
 }
 
-/* Main Content Styling */
+/* Style untuk main-content */
 .main-content {
   flex: 1;
   padding: 2rem;
@@ -54,7 +58,7 @@
   background-color: #f9fafb;
 }
 
-/* Edit Form Styling */
+/* Styling Formulir Edit */
 .edit-form {
   background-color: white;
   border-radius: 12px;
@@ -64,10 +68,12 @@
   margin: 0 auto;
 }
 
+/* Grup formulir */
 .form-group {
   margin-bottom: 1.5rem;
 }
 
+/* Label formulir */
 .form-group label {
   display: block;
   color: #1e293b;
@@ -75,6 +81,7 @@
   font-weight: 600;
 }
 
+/* Styling input teks dan textarea */
 .form-group input[type="text"],
 .form-group textarea {
   width: 100%;
@@ -85,6 +92,7 @@
   transition: border-color 0.3s ease, box-shadow 0.3s ease;
 }
 
+/* Efek fokus untuk input */
 .form-group input[type="text"]:focus,
 .form-group textarea:focus {
   outline: none;
@@ -92,16 +100,18 @@
   box-shadow: 0 0 0 3px rgba(19, 89, 172, 0.15);
 }
 
+/* Textarea dengan tinggi minimal dan kemampuan mengubah ukuran */
 textarea {
   min-height: 120px;
   resize: vertical;
 }
 
-/* Photo Upload Section */
+/* Bagian Unggah Foto */
 .photo-upload {
   margin-bottom: 1.5rem;
 }
 
+/* Label unggah foto */
 .photo-upload label {
   font-weight: 600;
   color: #1e293b;
@@ -109,12 +119,14 @@ textarea {
   display: block;
 }
 
+/* Wrapper input foto */
 .photo-input-wrapper {
   display: flex;
   align-items: center;
   gap: 1rem;
 }
 
+/* Pratinjau foto */
 .photo-preview {
   width: 150px;
   height: 150px;
@@ -127,19 +139,21 @@ textarea {
   background-color: #f8fafc;
 }
 
+/* Gambar dalam pratinjau */
 .photo-preview img {
   max-width: 100%;
   max-height: 100%;
   object-fit: cover;
 }
 
-/* Button Group */
+/* Kelompok Tombol */
 .button-group {
   display: flex;
   gap: 1rem;
   margin-top: 2rem;
 }
 
+/* Tombol Simpan */
 .btn-save {
   background-color: #1359AC;
   color: white;
@@ -151,11 +165,13 @@ textarea {
   transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
+/* Efek hover tombol simpan */
 .btn-save:hover {
   background-color: #0f4c8a;
   transform: scale(1.02);
 }
 
+/* Tombol Hapus */
 .btn-delete {
   background-color: #dc2626;
   color: white;
@@ -167,38 +183,46 @@ textarea {
   transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
+/* Efek hover tombol hapus */
 .btn-delete:hover {
   background-color: #b91c1c;
   transform: scale(1.02);
 }
 
-/* Responsive Design */
+/* Desain Responsif untuk Layar Kecil */
 @media (max-width: 768px) {
+  /* Sidebar disembunyikan */
   .sidebar {
     transform: translateX(-250px);
   }
 
+  /* Konten utama mengisi layar penuh */
   .main-content {
     margin-left: 0;
     width: 100%;
     padding: 1rem;
   }
 
+  /* Formulir edit dengan padding */
   .edit-form {
     padding: 1.5rem;
   }
 
+  /* Tombol dalam tata letak vertikal */
   .button-group {
     flex-direction: column;
   }
 
+  /* Tombol mengisi lebar layar */
   .btn-save,
   .btn-delete {
     width: 100%;
   }
 }
 
+/* Desain untuk Layar Besar */
 @media (min-width: 769px) {
+  /* Sidebar ditampilkan */
   .sidebar {
     transform: translateX(0);
   }
