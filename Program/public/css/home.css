@@ -118,15 +118,6 @@
   z-index: 1;
 }
 
-.box1:hover::before, .box2:hover::before, .box3:hover::before, .box4:hover::before {
-  background-color: rgba(255, 255, 255, 0.2);
-}
-
-.box1:hover, .box2:hover, .box3:hover, .box4:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
-}
-
 /* Judul Kotak Layanan */
 .box1 h2, .box2 h2, .box3 h2, .box4 h2 {
   background-color: rgba(156, 180, 20, 0.8);
@@ -147,18 +138,10 @@
   box-sizing: border-box;
 }
 
-.box1:hover h2, .box2:hover h2, .box3:hover h2, .box4:hover h2 {
-  background-color: rgba(156, 180, 20, 0.9);
-}
-
 /* Latar Belakang Kotak Layanan */
 .box1, .box2, .box3, .box4 {
   background-size: cover;
   background-position: center;
-}
-
-.box1:hover, .box2:hover, .box3:hover, .box4:hover {
-  transform: translateY(-5px);
 }
 
 /* Kotak Layanan Spesifik */
@@ -234,6 +217,7 @@
   background: #fff;
   border-radius: 15px;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.35);
 }
 
 /* Ikon Lingkaran */
