@@ -1,0 +1,41 @@
+/* Mengatur gaya dasar untuk seluruh dokumen */
+body {   
+  margin: 0;   
+  font-family: Arial, Helvetica, sans-serif; 
+}  
+
+/* Header dengan tata letak fleksibel dan latar belakang hitam */
+.header {   
+  display: flex;   
+  justify-content: space-between;
+  align-items: center;
+  background-color: #000000;
+  padding: 10px 20px;
+  height: 60px;
+  position: fixed;
+  top: 0;
+  left: 0;   
+  right: 0;   
+  z-index: 1000;
+}  
+
+/* Kontainer untuk logo */
+.logo {   
+  display: flex;
+  align-items: center;
+}  
+
+/* Pengaturan ukuran dan posisi gambar logo */
+.logo-image {   
+  height: 40px;
+  margin-right: 10px;
+  margin-left: 35px;
+}  
+
+/* Gaya teks nama klinik di header */
+.clinic-name-header {   
+  font-size: 18px;
+  max-width: 100px;
+  color: rgb(255, 255, 255);
+  font-weight: bold;
+}

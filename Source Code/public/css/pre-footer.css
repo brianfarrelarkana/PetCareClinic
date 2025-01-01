@@ -1,0 +1,136 @@
+/* Bagian pra-footer */
+.pre-footer {
+  background-color: #e3e4e6;
+  padding: 4rem 2rem;
+  margin-top: 4rem;
+  border-top: 1px solid #e9ecef;
+}
+
+/* Kontainer untuk tata letak pra-footer */
+.pre-footer-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  margin-left: auto;
+  display: flex;
+  justify-content: flex-end;
+  gap: 4rem;
+  padding-right: 4rem;
+}
+
+/* Kolom footer individual */
+.footer-column {
+  flex: 0 1 250px;
+}
+
+/* Judul pada setiap kolom footer */
+.footer-column h3 {
+  color: #333;
+  font-size: 1.25rem;
+  margin-bottom: 1.5rem;
+  font-weight: 600;
+  position: relative;
+}
+
+/* Garis bawah pada judul kolom footer */
+.footer-column h3::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -8px;
+  width: 40px;
+  height: 3px;
+  background-color: #9CB414;
+  border-radius: 2px;
+}
+
+/* Daftar dalam kolom footer */
+.footer-column ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-column ul li {
+  margin-bottom: 0.75rem;
+}
+
+/* Tautan dalam daftar footer */
+.footer-column ul li a {
+  color: #666;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.footer-column ul li a:hover {
+  color: #9CB414;
+}
+
+/* Daftar jam operasional */
+.hours-list li {
+  color: #666;
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  margin-bottom: 0.75rem;
+}
+
+.hours-list li span {
+  font-weight: 600;
+  color: #333;
+}
+
+/* Informasi darurat */
+.emergency {
+  margin-top: 1rem;
+  color: #9CB414;
+  font-weight: 600;
+}
+
+/* Daftar kontak */
+.contact-list li {
+  color: #666;
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: flex-start;
+  gap: 0.5rem;
+}
+
+.contact-list i {
+  color: #9CB414;
+  margin-top: 4px;
+}
+
+/* Desain responsif untuk layar berukuran sedang */
+@media (max-width: 1024px) {
+  .pre-footer-container {
+    padding-right: 2rem;
+    gap: 2rem;
+  }
+}
+
+/* Desain responsif untuk layar kecil */
+@media (max-width: 768px) {
+  /* Mengubah tata letak kontainer pra-footer menjadi vertikal */
+  .pre-footer-container {
+    flex-direction: column;
+    align-items: center;
+    padding-right: 0;
+  }
+  
+  /* Menyesuaikan lebar kolom footer */
+  .footer-column {
+    width: 100%;
+    max-width: 300px;
+    text-align: center;
+  }
+  
+  /* Menempatkan garis bawah judul di tengah untuk layar kecil */
+  .footer-column h3::after {
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  
+  /* Memusatkan daftar kontak */
+  .contact-list li {
+    justify-content: center;
+  }
+}

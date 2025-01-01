@@ -1,0 +1,281 @@
+/* Mengatur margin, padding, dan box-sizing untuk semua elemen */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Inter", Arial, sans-serif;
+}
+
+/* Tata letak utama */
+.layout {
+  display: flex;
+  min-height: 100vh;
+  margin-top: 60px;
+}
+
+/* Style untuk sidebar */
+.sidebar {
+  width: 250px;
+  background-color: #1359ac;
+  color: white;
+  padding: 20px 0;
+  position: fixed;
+  height: calc(100vh - 60px);
+}
+
+/* Style h1 dalam sidebar */
+.sidebar h1 {
+  padding: 0 20px;
+  margin-bottom: 30px;
+  font-size: 24px;
+}
+
+/* Menghilangkan bullet point dari daftar navigasi */
+.sidebar-nav {
+  list-style: none;
+}
+
+/* Item navigasi sidebar */
+.sidebar-nav li {
+  padding: 12px 20px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+/* Hover untuk item navigasi sidebar */
+.sidebar-nav li:hover {
+  background-color: #2a7de2;
+}
+
+/* Item navigasi aktif */
+.sidebar-nav li.active {
+  background-color: #2a7de2;
+}
+
+/* Style untuk main-content */
+.main-content {
+  flex: 1;
+  padding: 2rem;
+  background-color: #f5f6fa;
+  margin-left: 250px;
+  width: calc(100% - 250px);
+}
+
+/* Header dashboard */
+.dashboard-header {
+  margin-bottom: 2rem;
+}
+
+/* Judul header dashboard */
+.dashboard-header h1 {
+  color: #1359ac;
+  margin-bottom: 1rem;
+}
+
+/* Tata letak untuk dashboard-stats */
+.dashboard-stats {
+  display: flex;
+  gap: 1.5rem;
+}
+
+/* Style untuk stats-card */
+.stat-card {
+  background-color: white;
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  flex: 1;
+  text-align: center;
+  transition: transform 0.3s ease;
+}
+
+/* Hover untuk stat-card */
+.stat-card:hover {
+  transform: translateY(-5px);
+}
+
+/* Style stast-card pada h3 */
+.stat-card h3 {
+  color: #64748b;
+  margin-bottom: 0.5rem;
+  font-size: 1rem;
+}
+
+/* Style untuk stat-number */
+.stat-number {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #1359ac;
+}
+
+/* Mengatur posisi untuk booking-list */
+.booking-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+/* Style untuk booking-card */
+.booking-card {
+  background-color: white;
+  border-radius: 12px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  padding: 1.5rem;
+  transition: all 0.3s ease;
+}
+
+/* Hover untuk booking-card */
+.booking-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+}
+
+/* Style untuk booking-header */
+.booking-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+/* Style booking-id */
+.booking-id {
+  color: #64748b;
+  font-weight: 500;
+}
+
+/* Style untuk booking-status dengan berbagai warna */
+.booking-status {
+  font-size: 0.85rem;
+  padding: 5px 10px;
+  border-radius: 20px;
+}
+
+.booking-status.pending {
+  background-color: #fef3c7;
+  color: #d97706;
+}
+
+.booking-status.completed {
+  background-color: #d1fae5;
+  color: #059669;
+}
+
+.booking-status.cancelled {
+  background-color: #fdc9c6;
+  color: #f44336;
+}
+
+/* Tata letak untuk booking-details */
+.booking-details {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Style untuk booking-info pada h3 dan p */
+.booking-info h3 {
+  color: #1359ac;
+  margin-bottom: 0.5rem;
+}
+
+.booking-info p {
+  color: #64748b;
+  margin-bottom: 0.25rem;
+}
+
+/* Posisi untuk booking-actions */
+.booking-actions {
+  display: flex;
+  gap: 0.75rem;
+}
+
+/* Style untuk tombol aksi */
+.btn-approve,
+.btn-reject,
+.btn-view {
+  padding: 8px 15px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-size: 0.9rem;
+}
+
+/* Style untuk tombol completed */
+.booking-actions .completed {
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+/* Style untuk tombol cancelled */
+.booking-actions .cancelled {
+  background-color: #f44336;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+/* Style booking-action saat dinonaktifkan */
+.booking-actions .completed:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* Style desain responsif untuk layar kecil */
+@media (max-width: 768px) {
+  .main-content {
+    margin-left: 0;
+    width: 100%;
+    padding: 1rem;
+  }
+
+  .sidebar {
+    display: none;
+  }
+
+  .dashboard-stats {
+    flex-direction: column;
+  }
+
+  .booking-details {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+
+  .booking-actions {
+    width: 100%;
+    flex-direction: column;
+  }
+
+  .btn-approve,
+  .btn-reject,
+  .btn-view {
+    width: 100%;
+  }
+}
+
+/* Posisi dan ukuran font serta gambar untuk Payment-proof */
+.payment-proof {
+  margin-top: 10px;
+}
+
+.payment-proof h4 {
+  font-size: 14px;
+  margin-bottom: 5px;
+}
+
+.payment-proof-img {
+  width: 100%;
+  height: auto;
+  display: block;
+}

@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Detail Pemesanan | Pet Care Clinic</title>
+
+  <!-- Link ke file CSS untuk styling halaman -->
+  <link rel="stylesheet" href="/css/detail-order.css">
+  <link rel="stylesheet" href="/css/header.css">
+  <link rel="stylesheet" href="/css/pre-footer.css">
+  <link rel="stylesheet" href="/css/footer.css">
+</head>
+
+<body>
+
+  <!-- Header yang berisi logo dan nama website serta panel menu-->
+  <div class="header">
+    <a href="home.html" class="logo" id="home-logo">
+      <img src="img/Group 3299.png" alt="Logo Klinik" class="logo-image">
+      <span class="clinic-name">Pet Care Clinic</span>
+    </a>
+
+    <!-- Panel menu -->
+    <nav class="nav">
+      <ul class="nav-list">
+        <li><a id="home-link" href="home.html">Beranda</a></li>
+        <li><a id="clinic-link" href="clinics.html">Daftar Klinik</a></li>
+        <li><a id="about-link" href="about-us.html">Tentang</a></li>
+        <li><a id="contact-link" href="contact-us.html">Kontak</a></li>
+      </ul>
+    </nav>
+
+    <!-- Kontainer untuk autentikasi user -->
+    <div id="authContainer"></div>
+  </div>
+
+  <!-- Bagian utama halaman "Detail Pemesanan" -->
+  <main class="main-container">
+    <h1>Detail Pemesanan</h1>
+
+    <div class="order-details">
+      <div class="details-section">
+        <h2>Informasi Pemilik</h2>
+        <div class="detail-row">
+          <span class="label">Nama:</span>
+          <span class="value" id="owner-name">-</span>
+        </div>
+        <div class="detail-row">
+          <span class="label">Email:</span>
+          <span class="value" id="owner-email">-</span>
+        </div>
+        <div class="detail-row">
+          <span class="label">Nomor Telepon:</span>
+          <span class="value" id="owner-phone">-</span>
+        </div>
+      </div>
+
+      <div class="details-section">
+        <h2>Informasi Hewan Peliharaan</h2>
+        <div class="detail-row">
+          <span class="label">Nama Hewan:</span>
+          <span class="value" id="pet-name">-</span>
+        </div>
+        <div class="detail-row">
+          <span class="label">Jenis Hewan:</span>
+          <span class="value" id="pet-type">-</span>
+        </div>
+        <div class="detail-row">
+          <span class="label">Umur Hewan:</span>
+          <span class="value" id="pet-age">-</span>
+        </div>
+      </div>
+
+      <div class="details-section">
+        <h2>Detail Pemesanan</h2>
+        <div class="detail-row">
+          <span class="label">Jenis Layanan:</span>
+          <span class="value" id="service-type">-</span>
+        </div>
+        <div class="detail-row">
+          <span class="label">Tanggal Pemesanan:</span>
+          <span class="value" id="booking-date">-</span>
+        </div>
+        <div class="detail-row">
+          <span class="label">Waktu Pemesanan:</span>
+          <span class="value" id="booking-time">-</span>
+        </div>
+        <div class="detail-row">
+          <span class="label">Catatan Tambahan:</span>
+          <span class="value" id="additional-notes">-</span>
+        </div>
+      </div>
+
+      <div class="booking-status">
+        <span class="status pending" id="booking-status">Status: Pending</span>
+      </div>
+
+      <!-- Tombol Back -->
+      <div class="action-buttons">
+        <button id="back" class="btn btn-primary" >Kembali</button>
+      </div>
+    </div>
+  </main>
+
+  <!-- Bagian Pre-Footer -->
+  <section class="pre-footer">
+    <div class="pre-footer-container">
+
+      <!-- Subbagian Footer "Layanan Kami" -->
+      <div class="footer-column">
+        <h3>Layanan Kami</h3>
+        <ul>
+          <li>Vaccination</li>
+          <li>Health Check</li>
+          <li>Veterinary Care</li>
+          <li>Pet Grooming</li>
+          <li>Pet Boarding</li>
+          <li>Pet Training</li>
+        </ul>
+      </div>
+
+      <!-- Subbagian Footer "Hubungi Kami" -->
+      <div class="footer-column">
+        <h3>Hubungi Kami</h3>
+        <ul class="contact-list">
+          <li><i class="fas fa-phone"></i> +62 812 3456 0987</li>
+          <li><i class="fas fa-envelope"></i> petcareclinic@gmail.com</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- Bagian Footer -->
+  <section class="footer">
+    <div class="copyright-bar">
+      <div class="copyright-content">
+        <p>&copy; 2024 Pet Care Clinic. All rights reserved.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Link ke file JS yang fungsinya dibutuhkan halaman -->
+  <script type="module" src="js/header.js"></script>
+  <script type="module" src="js/detail-order.js"></script>
+</body>
+
+</html>

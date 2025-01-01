@@ -1,0 +1,187 @@
+/* Pengaturan Reset dan Gaya Dasar */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Style Utama Halaman - Body */
+body {
+  font-family: Arial, sans-serif;
+  background-image: url(../img/bg-2.png);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Kontainer Utama Halaman */
+.container {
+  width: 100%;
+  max-width: 400px;
+  padding: 20px;
+}
+
+/* Style dan Tata Letak Logo */
+.logo {
+  text-align: center;
+  margin: 40px 0 60px;
+}
+
+.logo img {
+  width: 100px;
+  height: auto;
+}
+
+/* Style Formulir Registrasi */
+.register-form {
+  background: white;
+  padding: 30px;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.register-form h1 {
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+/* Style Input Group */
+.input-group {
+  position: relative;
+  margin-bottom: 20px;
+}
+
+/* Pembungkus Ikon Input */
+.icon-wrapper {
+  position: absolute;
+  left: 15px;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 20px;
+  height: 20px;
+  pointer-events: none;
+}
+
+/* Style Ikon */
+.icon {
+  width: 20px;
+  height: 20px;
+  opacity: 0.6;
+  transition: opacity 0.2s ease;
+}
+
+/* Style Elemen Input */
+.input-group input {
+  width: 100%;
+  padding: 15px 15px 15px 45px;
+  border: none;
+  border-bottom: 1px solid #ddd;
+  border-radius: 0;
+  font-size: 16px;
+  outline: none;
+  transition: border-color 0.3s ease;
+}
+
+.input-group input[type="password"] {
+  padding-right: 45px;
+}
+
+/* Efek Fokus untuk Input */
+.input-group input:focus {
+  border-bottom-color: #1e3c72;
+}
+
+.input-group input:focus + .icon-wrapper .icon {
+  opacity: 1;
+}
+
+/* Tombol Toggle Kata Sandi */
+.toggle-password {
+  position: absolute;
+  right: 15px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.toggle-password:focus {
+  outline: none;
+}
+
+.toggle-password img {
+  width: 20px;
+  height: 20px;
+  opacity: 0.6;
+  transition: opacity 0.2s ease;
+}
+
+.toggle-password:hover img {
+  opacity: 1;
+}
+
+/* Kelas untuk Menyembunyikan Elemen */
+.hidden {
+  display: none;
+}
+
+/* Style untuk Button Registrasi */
+.register-btn {
+  width: 100%;
+  padding: 15px;
+  background: #9CB414;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  margin-bottom: 15px;
+  transition: background-color 0.3s ease;
+}
+
+.register-btn:hover {
+  background: #333;
+}
+
+/* Style untuk Direct to Login */
+.login-link {
+  text-align: center;
+  font-size: 14px;
+}
+
+.login-link a {
+  color: #9CB414;
+  text-decoration: none;
+}
+
+.login-link a:hover {
+  text-decoration: underline;
+}
+
+/* Desain Responsif untuk Layar Kecil */
+@media screen and (max-width: 480px) {
+  .container {
+      padding: 15px;
+  }
+  
+  .register-form {
+      padding: 20px;
+  }
+  
+  .logo {
+      margin: 30px 0 40px;
+  }
+}
